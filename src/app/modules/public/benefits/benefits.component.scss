@@ -1,0 +1,164 @@
+@import "../../../app.component.scss";
+
+.rectangle {
+  width: 100%;
+  background-color: $primary-color;
+  margin: 50px 0 50px 0;
+  height: 350px;
+}
+
+.rectangle-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 350px;
+}
+
+.description {
+  width: 50%;
+}
+
+.description p {
+  color: $text-color;
+  width: 70%;
+  margin: 0 0 0 20%;
+  font-size: 1.3rem;
+}
+
+.circle {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  margin: 0 10% 0 0;
+  width: 50%;
+}
+
+.circle img {
+  width: 500px;
+  border-radius: 50%;
+  box-shadow: 16px 12px 0px 8px #fff;
+}
+
+.reward-container {
+  margin: 0 0 0 100px;
+}
+
+.reward-icon {
+  width: 200px;
+}
+
+
+// <--- start Card styles -->
+
+.catalog-container {
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  flex-direction: column;
+  width: 100%;
+  margin: 100px;
+
+}
+
+.catalog-title {
+  width: 100%;
+}
+
+.catalog-title h1 {
+  color: $title-color;
+  font-size: 1.8rem;
+}
+
+.card-container {
+  margin: 50px 150px 0 0;
+  display: flex;
+  flex-wrap: wrap; 
+  justify-content: space-around; 
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+
+.card {
+  display: grid;
+  gap: 20px;
+  width: 300px; 
+  margin: 10px; 
+  border: 1px solid #ccc;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s ease; 
+}
+
+.card img {
+  width: 300px;
+}
+
+.card h2 {
+  font-size: 1.3rem;
+  color: $title-color;
+}
+
+.card p {
+  font-size: 0.75rem;
+  color: $paragraph-color;
+}
+
+.card-title, .card-description, .card-rating {
+  margin: 0 30px 0 30px;
+}
+
+.card-rating {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  width: 100%;
+  color: $title-color;
+}
+
+.card-footer {
+  width: 100%;
+  padding: 0 20px 20px 20px;
+  border: none;
+  background-color: #fff;
+}
+
+.card-footer .button{
+  background-color: $quaternary-color;
+  color: #fff;
+  height: 50px;
+  border-radius: 6px;
+  width: 100%;
+}
+
+.button:after {
+  background-color: $tertiary-color;
+}
+
+.button:hover {
+  border: 1px solid $tertiary-color;
+}
+
+.button:hover:before {
+  background-color: $tertiary-color;
+}
+
+.button:hover:after {
+  background-color: $tertiary-color;
+}
+
+
+ @media (max-width: 768px) {
+  .card {
+    width: calc(50% - 20px); 
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    width: calc(100% - 20px);
+  }
+}
+
+// <--- End Card styles -->

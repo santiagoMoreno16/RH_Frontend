@@ -1,0 +1,273 @@
+@import '../../../app.component.scss';
+
+main {
+  color: white;
+}
+
+.reward-container {
+  margin: 0 0 50px 0;
+}
+
+.reward-icon {
+  width: 200px;
+}
+
+.circle {
+  position: fixed;
+  width: 900px;
+  height: 900px;
+  right: -200px;
+  max-height: 900px;
+  max-width: 900px;
+  top: -100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 50%;
+  background: $secondary-color;
+  box-shadow: 22px -22px 65px #eeb515, -22px 22px 65px #ffc817;
+}
+
+.circle-image {
+  position: relative;
+  top: 30px;
+  right: 90px;
+  transform: scale(1.1);
+}
+
+.welcome-container {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 0 0 100px;
+  height: 100vh;
+}
+.welcome-title {
+  width: 50%;
+  margin: 0 0 50px 0;
+}
+
+.welcome-text {
+  width: 60%;
+}
+
+.circle-container {
+  width: 50%;
+  max-width: 50%;
+}
+
+h2 {
+  color: #003366;
+}
+
+p {
+  color: #c1c0c4;
+}
+
+
+// Login Button
+
+.button {
+  display: inline-block;
+  transition: all 0.2s ease-in;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  color: #fff;
+  padding: 0.7em 1.7em;
+  width: 270px;
+  font-size: 18px;
+  border-radius: 0.5em;
+  margin: 20px 0 0 0;
+  background: $secondary-color;
+  border: 1px solid $secondary-color;
+  box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;
+}
+
+.button:active {
+  color: #666;
+  box-shadow: inset 4px 4px 12px #c5c5c5, inset -4px -4px 12px #ffffff;
+}
+
+.button:before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) scaleY(1) scaleX(1.25);
+  top: 100%;
+  width: 140%;
+  height: 180%;
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 50%;
+  display: block;
+  transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+  z-index: -1;
+}
+
+.button:after {
+  content: "";
+  position: absolute;
+  left: 55%;
+  transform: translateX(-50%) scaleY(1) scaleX(1.45);
+  top: 180%;
+  width: 160%;
+  height: 190%;
+  background-color: $primary-color;
+  border-radius: 50%;
+  display: block;
+  transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+  z-index: -1;
+}
+
+.button:hover {
+  color: #ffffff;
+  border: 1px solid $primary-color;
+}
+
+.button:hover:before {
+  top: -35%;
+  background-color: $primary-color;
+  transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+}
+
+.button:hover:after {
+  top: -45%;
+  background-color: $primary-color;
+  transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+}
+
+//   Cards Styles
+
+.card-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.cards {
+  display: flex;
+  gap: 2em;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px 0 20px;
+  width: 80%;
+}
+
+.card {
+  display: inline-block;
+  transition: all 0.2s ease-in;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  flex: 1 1 250px;
+  width: 250px;
+  height: 250px;
+  background-color: #fff;
+  padding: 30px;
+  border-color: transparent transparent $primary-color transparent;
+  box-shadow: -1px 9px 8px 0px rgb(0, 51, 102);
+  border-bottom-width: 10px;
+}
+
+.card-content {
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  flex-direction: column;
+}
+
+.card-body {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 0;
+}
+
+.card img {
+  width: 40px;
+  padding: 0 0 20px 0;
+}
+
+.card h3 {
+  color: #a2a2a2;
+  font-size: 1.5rem;
+}
+
+.card p {
+  color: #a2a2a2;
+  font-size: 1rem;
+  height: 50px;
+  margin: 0 0 10px 0;
+}
+
+.card a {
+  position: relative;
+  top: 20px;
+  color: #003366;
+}
+
+.card:hover a,
+.card:hover p,
+.card:hover h3 {
+  color: #eceae6;
+  transition: color 0.2s ease-in-out 0.2s;
+}
+.card:hover img {
+  filter: invert(10%);
+}
+
+.card:active {
+  color: #666;
+  box-shadow: inset 4px 4px 12px #c5c5c5, inset -4px -4px 12px #ffffff;
+}
+
+.card:before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) scaleY(1) scaleX(1.25);
+  top: 100%;
+  width: 140%;
+  height: 180%;
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 50%;
+  display: block;
+  transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+  z-index: -1;
+}
+
+.card:after {
+  content: "";
+  position: absolute;
+  left: 55%;
+  transform: translateX(-50%) scaleY(1) scaleX(1.45);
+  top: 180%;
+  width: 160%;
+  height: 190%;
+  background-color: $primary-color;
+  border-radius: 50%;
+  display: block;
+  transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+  z-index: -1;
+}
+
+.card:hover {
+  color: #ffffff;
+  border: 1px solid $primary-color;
+}
+
+.card:hover:before {
+  top: -35%;
+  background-color: $primary-color;
+  transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+}
+
+.card:hover:after {
+  top: -45%;
+  background-color: $primary-color;
+  transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+}

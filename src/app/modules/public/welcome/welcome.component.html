@@ -1,0 +1,90 @@
+<app-header-land></app-header-land>
+
+<main>
+  <!-- Start Welcome -->
+  <section>
+    <div class="welcome-container">
+      <div class="reward-container">
+        <img
+          class="reward-icon"
+          src="assets/icons/reward_hours.svg"
+          alt="rewardhours"
+        />
+      </div>
+      <div class="welcome-title">
+        <h2>¡Bienvenido a RewardHours!</h2>
+      </div>
+      <div class="welcome-text">
+        <p>
+          En RewardHours, reconocemos y celebramos el valor de tu tiempo y
+          esfuerzo. Somos más que una plataforma de recursos humanos; somos tu
+          aliado en la búsqueda de recompensas significativas por el esfuerzo
+          dedicado a tu trabajo.
+        </p>
+      </div>
+
+      <div class="button-container">
+        <button class="button" [routerLink]="'/land/login'">INICIAR SESIÓN</button>
+      </div>
+    </div>
+    <div class="circle-container">
+      <div class="circle">
+        <div class="circle-image">
+          <img src="assets/images/smiling_people.svg" alt="smiling_people " />
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Welcome -->
+
+  <!-- Start Cards -->
+
+  <section>
+    <div class="card-container">
+      <div class="cards">
+        <div class="card">
+          <img src="assets/icons/gift.svg" alt="reward" />
+          <div class="card-content">
+            <h3>PREMIOS</h3>
+            <div class="card-body">
+              <p>Filtros para buscar premios según categorías.</p>
+              <a href="">VER MÁS</a>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <img src="assets/icons/pencil.svg" alt="blog" />
+          <div class="card-content">
+            <h3>BLOG</h3>
+            <div class="card-body">
+              <p>Actualización sobre nuevos convenios y premios.</p>
+              <a href="">VER MÁS</a>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <img src="assets/icons/users.svg" alt="user" />
+          <div class="card-content">
+            <h3>ÁREA USUARIO</h3>
+            <div class="card-body">
+              <p>Inicia sesión si eres empleado, empresa o proveedor.</p>
+              <a href="">VER MÁS</a>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <img src="assets/icons/help.svg" alt="contact" />
+          <div class="card-content">
+            <h3>CONTACTO</h3>
+            <div class="card-body">
+              <p>Formulario de contacto y detalles de sorporte.</p>
+              <a href="">VER MÁS</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- End Cards -->
+</main>

@@ -1,0 +1,247 @@
+@import "../../../../app.component.scss";
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  width: 100%;
+  max-width: 100%;
+  height: 271px;
+  background-image: url("../../../../../assets/images/edifice_user_details.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.profile-container {
+  position: relative;
+  margin: 0 60px 0 50px;
+}
+
+.profile-picture {
+  width: 154px;
+  height: 154px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.status-circle {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  bottom: -20px;
+  right: -35px;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: $quaternary-color;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: bold;
+}
+
+.status-circle p:nth-child(1) {
+  margin: 0 0 0 30px;
+  width: 100%;
+  font-size: 0.7rem;
+}
+
+.status-circle p:nth-child(2) {
+  margin: 0;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+// Data Container Styles
+
+.data-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 0 60px 0 50px;
+  width: 100%;
+}
+
+.data-container div {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $title-color;
+  margin: 0 0 10px 0;
+}
+
+.data-container div:nth-child(1) h2 {
+  font-size: 1.8rem;
+}
+
+.data-container div p {
+  font-size: 1.25rem;
+  margin: 0;
+}
+
+.data-container div:nth-child(4) p {
+  margin: 0 0 0 10px;
+}
+
+// Points Container Styles
+
+.points-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 0 60px 0 50px;
+}
+
+.points-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  color: $title-color;
+}
+
+.points-container div:nth-child(1) h2 {
+  font-size: 1.8rem;
+}
+
+.points-container div p {
+  font-size: 1.25rem;
+  margin: 0;
+}
+
+.data-points-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.points-names {
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  flex-direction: column;
+  width: 200px;
+  margin: 0 20px 0 0;
+}
+
+.points-numbers {
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  flex-direction: column;
+  width: 100px;
+}
+
+.points-numbers p {
+  color: $quaternary-color;
+  font-size: 1.875rem;
+  font-weight: bold;
+}
+
+// Button Style
+
+.button-container {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.button {
+  background-color: $quaternary-color;
+  color: #fff;
+  border-radius: 50px;
+  margin: 0 0 20px 0;
+}
+
+.button:after {
+  background-color: $tertiary-color;
+}
+
+.button:hover {
+  border: 1px solid $tertiary-color;
+}
+
+.button:hover:before {
+  background-color: $tertiary-color;
+}
+
+.button:hover:after {
+  background-color: $tertiary-color;
+}
+
+// Supplementary box styles
+
+.supplementary-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 87%;
+  margin: 100px;
+  color: $title-color;
+}
+
+.my-points {
+  width: 100%;
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  font-size: 1.875rem;
+}
+
+.my-points p:nth-child(2) {
+  margin: 0 0 0 30px;
+  color: $quaternary-color;
+  font-size: 1.875rem;
+  font-weight: bold;
+}
+
+.edit-container {
+  @extend .my-points;
+  justify-content: end;
+  font-size: 1.25rem;
+}
+
+.edit-button {
+  color: $quaternary-color;
+  border: 2px solid $quaternary-color;
+  padding: 10px;
+  transition: transform 0.3s ease;
+  background-color: transparent;
+}
+
+.edit-button:hover {
+  transform: translateY(2px);
+}
+
+.name-box {
+  @extend .my-points;
+}
+
+.content-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  font-size: 1.25rem;
+}
+
+.box {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: start;
+  margin: 30px 0 30px 0;
+}
+
+.box div {
+  margin: 0 0 20px 0;
+}

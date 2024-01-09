@@ -1,0 +1,45 @@
+@import "../../../../app.component.scss";
+
+nav {
+  z-index: 2;
+  background: $primary-color;
+  margin: 80px 0 0 0;
+}
+
+li a {
+  color: $text-color;
+  font-weight: bold;
+  text-decoration: none;
+  margin: 0 20px 0 20px;
+}
+
+li a.active {
+  color: $secondary-color;
+}
+
+li a:hover {
+  color: $secondary-color;
+}
+
+nav img {
+  margin: 0 5% 0 10%;
+}
+
+.search-button {
+  background: none;
+  margin: 0 10px 0 10px;
+}
+
+.search-button img{
+  width: 20px;
+}
+
+
+form input {
+  border-radius: 60px;
+  width: 400px;
+  height: 30px;
+  background: #7acccc;
+  border: none;
+  color: #fff;
+}

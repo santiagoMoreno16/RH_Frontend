@@ -1,0 +1,56 @@
+npm i ngx-toastr
+npm i ngx-pagination
+
+npm i @popperjs/core
+npm i @fortawesome/fontawesome-free
+
+npm i bootstrap
+npm i bootstrap-icons
+npm i ngx-bootstrap
+
+# ****************************************************
+
+# Creación de módulos
+
+ng g m modules/container
+
+ng g c modules/container/land/headerLand
+ng g c modules/container/land/containerLand
+ng g c modules/container/dash/headerDash
+ng g c modules/container/dash/containerDash
+
+
+ng g m modules/public
+ng g m modules/public/public-routing --flat --module=public
+
+ng g c modules/public/error
+ng g c modules/public/benefits
+ng g c modules/public/blog
+ng g c modules/public/contact
+ng g c modules/public/welcome
+
+
+# ****************************************************
+
+# Vamos a crear las utilidades
+
+ng g enum utils/messages/toast --type=func
+ng g enum utils/routes/landRoutes
+ng g enum utils/routes/dashRoutes
+
+
+# ****************************************************
+private 
+
+ng g c modules/private/UserDetails
+
+
+ng g m modules/private/control
+ng g m modules/private/control/control-routing --flat --module=control
+
+ng g c modules/private/control/internalError
+ng g c modules/private/control/internalHome
+
+
+ng g m modules/private/user
+ng g m modules/private/user/user-routing --flat --module=user

@@ -1,0 +1,22 @@
+
+@import '../../../../app.component.scss';
+
+nav {
+  z-index: 2;
+  height: 100px;
+}
+
+li a {
+  color: #707070;
+  font-weight: bold;
+  text-decoration: none;
+  margin: 0 20px 0 20px;
+}
+
+li a.active {
+  color: $secondary-color
+}
+
+li a:hover {
+  color: $secondary-color
+}
