@@ -1,9 +1,18 @@
 <app-header-land></app-header-land>
 
 <main>
-  <section>
+  <section
+    [ngClass]="{
+      'employee-selected': selectedOption === 'employee',
+      'company-selected': selectedOption === 'company',
+      'supplier-selected': selectedOption === 'supplier'
+    }"
+  >
     <div class="inner">
-      <div class="bar-container">
+      <div
+        class="bar-container"
+        [ngStyle]="{ transform: selectedOption ? 'translateX(90%)' : '' }"
+      >
         <div class="yellow-bar"></div>
         <div class="blue-bar"></div>
       </div>
@@ -14,22 +23,101 @@
       <div class="content-holder">
         <div class="content-title">
           <h2>Ingreso Usuarios</h2>
-        <img
-          class="reward-icon"
-          src="assets/icons/reward_hours.svg"
-          alt="rewardhours"
-        />
+          <img
+            class="reward-icon"
+            src="assets/icons/reward_hours.svg"
+            alt="rewardhours"
+          />
         </div>
 
         <div class="i-am">
+          @if (!showLoginForm) {
           <h3>yo soy</h3>
+          }
         </div>
 
         <div class="login-options">
-          <div class="employee-option">EMPLEADO</div>
-          <div class="company-option">EMPRESA</div>
-          <div class="supplier-option">PROVEEDOR ALIADO</div>
+          <div
+            class="employee-option"
+            (click)="selectOption('employee')"
+            [hidden]="selectedOption !== '' && selectedOption !== 'employee'"
+            [ngClass]="{ 'left-align': selectedOption === 'employee' }"
+          >
+            EMPLEADO
+          </div>
+          <div
+            class="company-option"
+            (click)="selectOption('company')"
+            [hidden]="selectedOption !== '' && selectedOption !== 'company'"
+            [ngClass]="{ 'left-align': selectedOption === 'company' }"
+          >
+            EMPRESA
+          </div>
+          <div
+            class="supplier-option"
+            (click)="selectOption('supplier')"
+            [hidden]="selectedOption !== '' && selectedOption !== 'supplier'"
+            [ngClass]="{ 'left-align': selectedOption === 'supplier' }"
+          >
+            PROVEEDOR ALIADO
+          </div>
         </div>
+
+        @if (showLoginForm) {
+        <div class="login-form">
+          <form
+            #frmLogin="ngForm"
+            (submit)="frmLogin.form.valid && operations(frmLogin)"
+            novalidate
+          >
+            <div class="form-group">
+              <input
+                type="text"
+                id="username"
+                name="username"
+                placeholder="Usuario"
+                [(ngModel)]="objUser.email"
+                [ngClass]="{
+                  'is-invalid': frmLogin.submitted && username.invalid
+                }"
+                #username="ngModel"
+                required
+              />
+              <img src="assets/icons/login_user.svg" alt="user" />
+            </div>
+
+            <div class="form-group">
+              <input
+                type="password"
+                id="password"
+                name="password"
+                [(ngModel)]="objUser.password"
+                [ngClass]="{
+                  'is-invalid': frmLogin.submitted && password.invalid
+                }"
+                #password="ngModel"
+                required
+                placeholder="Contraseña"
+                required
+              />
+              <img src="assets/icons/login_key.svg" alt="user" />
+            </div>
+
+            <div class="form-actions">
+              <div>
+                <button class="back-button" type="button" (click)="cancel()">
+                  Volver
+                </button>
+              </div>
+              <div>
+                <button class="login-button" type="submit" (click)="login()">
+                  Ingresar
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+        }
       </div>
     </div>
   </section>

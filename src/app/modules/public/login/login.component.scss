@@ -21,6 +21,7 @@ section {
 
 .content-holder {
   width: 50%;
+  height: 500px;
   margin: 30px;
 }
 
@@ -105,8 +106,7 @@ section {
   display: flex;
   align-items: center;
   justify-content: start;
-  width: 100%;
-  top: 160px;
+  width: 1000px;
 }
 
 .bar {
@@ -122,4 +122,99 @@ section {
 .yellow-bar {
   @extend .bar;
   background: $secondary-color;
+}
+
+.employee-selected .inner {
+  flex-direction: row-reverse;
+}
+
+.company-selected .inner {
+  flex-direction: row-reverse;
+}
+
+.supplier-selected .inner {
+  flex-direction: row-reverse;
+}
+
+.left-align {
+  left: -90px;
+}
+.left-align:hover {
+  transform: none;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  width: 100%;
+  height: 50%;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+
+  &.show {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .form-group {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: start;
+    margin: 0 0 20px 0;
+    font-size: 1.3rem;
+  }
+
+  .form-group input {
+    border: none;
+    margin: 0 10px 0 0;
+    outline: none;
+    background: transparent;
+    padding: 0 15px;
+    color: $paragraph-color;
+    font-size: 1.3rem;
+  }
+
+  .form-group input::placeholder {
+    color: $paragraph-color;
+  }
+
+  .form-actions {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    margin: 30px 0 0 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .form-actions div {
+    display: flex;
+    width: 50%;
+    align-items: center;
+    justify-content: start;
+  }
+
+  .login-buttons {
+    width: 100px;
+    height: 30px;
+    box-shadow: 0px 5px 14px 0px rgba(0, 0, 0, 0.19);
+  }
+
+  .login-buttons:hover {
+    transform: translateY(2px);
+  }
+
+  .back-button {
+    @extend .login-buttons;
+    background: $background-color;
+    color: $title-color;
+  }
+
+  .login-button {
+    @extend .login-buttons;
+    background: $tertiary-color;
+    color: $background-color;
+  }
 }
