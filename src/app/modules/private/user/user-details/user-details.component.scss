@@ -1,6 +1,8 @@
 @import "../../../../app.component.scss";
 
-.container {
+.user-container {
+  position: fixed;
+  top: 140px;
   display: flex;
   align-items: center;
   justify-content: start;
@@ -11,6 +13,7 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  z-index: 1;
 }
 
 .profile-container {
@@ -90,17 +93,10 @@
 // Points Container Styles
 
 .points-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
-  margin: 0 60px 0 50px;
-}
-
-.points-container {
   width: 100%;
   display: flex;
-  align-items: center;
+  align-items: start;
   justify-content: start;
   color: $title-color;
 }
@@ -122,7 +118,7 @@
 
 .points-names {
   display: flex;
-  align-items: end;
+  align-items: start;
   justify-content: center;
   flex-direction: column;
   width: 200px;
@@ -131,7 +127,7 @@
 
 .points-numbers {
   display: flex;
-  align-items: start;
+  align-items: center;
   justify-content: center;
   flex-direction: column;
   width: 100px;
@@ -140,24 +136,27 @@
 .points-numbers p {
   color: $quaternary-color;
   font-size: 1.875rem;
-  font-weight: bold;
 }
 
 // Button Style
 
 .button-container {
-  width: 50%;
+  width: 100%;
   height: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: start;
   align-items: flex-end;
 }
 
 .button {
   background-color: $quaternary-color;
   color: #fff;
-  border-radius: 50px;
   margin: 0 0 20px 0;
+  font-size: 1.25rem;
+  border-radius: 0;
+  width: 230px;
+  height: 40px;
+  padding: 0;
 }
 
 .button:after {
@@ -183,9 +182,11 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  width: 87%;
-  margin: 100px;
+  width: 100%;
+  margin: 500px 0 100px 0;
+  padding: 0 30px 0 80px;
   color: $title-color;
+  overflow-y: auto;
 }
 
 .my-points {
@@ -205,6 +206,7 @@
 
 .edit-container {
   @extend .my-points;
+  width: 80%;
   justify-content: end;
   font-size: 1.25rem;
 }
@@ -223,6 +225,7 @@
 
 .name-box {
   @extend .my-points;
+  font-weight: bold;
 }
 
 .content-box {
@@ -244,4 +247,116 @@
 
 .box div {
   margin: 0 0 20px 0;
+}
+
+// Benefits Styles =================================================================
+
+.benefits {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  width: 100%;
+  padding: 0 30px 0 80px;
+  flex-direction: column;
+}
+
+.benefits-title {
+  width: 100%;
+  color: $title-color;
+  font-size: 1.875rem;
+  margin: 0 0 30px 0;
+}
+
+.card-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+}
+
+.card {
+  background: #fff;
+  max-width: 500px;
+  width: 500px;
+  height: 176px;
+  margin: auto;
+  display: flex;
+}
+
+.card-inner {
+  display: flex;
+}
+
+.card-inner .card-img {
+  width: 50%;
+}
+
+.card-content {
+  width: 50%;
+  height: 180px;
+  margin: 10px 0 0 10px;
+}
+
+.card-title {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  width: 100%;
+}
+
+.card-title h2 {
+  color: $title-color;
+  font-size: 1.35rem;
+}
+
+.card-body {
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  margin: 0;
+  padding: 0;
+}
+
+.card-body p {
+  color: $paragraph-color;
+  font-size: 0.75rem;
+}
+
+
+// Personal Programs Styles =======================================================================
+
+
+.personal-programs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  padding: 0 30px 0 80px;
+  margin: 200px 0 200px 0;
+}
+
+.program-header {
+  width: 100%;
+  background-color: $quaternary-color;
+  padding: 20px 0 20px 20px;
+  
+}
+
+.program-header h1 {
+  color: $background-color;
+  font-size: 2.5rem;
+  margin: 0;
+}
+
+.add-program-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  margin: 50px 0 0 0;
+}
+
+.add-program-container button {
+  @extend .edit-button;
 }

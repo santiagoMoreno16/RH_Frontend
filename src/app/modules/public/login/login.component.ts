@@ -80,9 +80,6 @@ export class LoginComponent implements OnInit, OnDestroy {
       .subscribe(observadorAny);
   }
 
-  login() {
-    console.log('Iniciando sesión con:', this.username, this.password);
-  }
 
   cancel() {
     this.resetState();

@@ -1,1 +1,73 @@
 <app-header-land></app-header-land>
+
+<main>
+  <section>
+    <div class="inner">
+      <div class="content">
+        <div class="contact-us">
+          <h1>Contactenos</h1>
+          <p>
+            Puedes escribirnos en cualquier momento, te contestaremos tan pronto
+            como podamos.
+          </p>
+        </div>
+
+        <div class="contact-form">
+          <form #frmContact="ngForm" novalidate>
+            <div class="form-group">
+              <input type="text" id="name" name="name" required />
+              <label>Nombre</label>
+            </div>
+
+            <div class="form-group">
+              <input type="email" id="email" name="email" required />
+              <label>Email</label>
+            </div>
+            <div class="form-group">
+              <input type="text" id="message" name="message" required />
+              <label>Mensaje</label>
+            </div>
+
+            <div class="form-actions">
+              <div>
+                <button class="contact-button" type="submit">Enviar</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="box">
+        <div class="info-box">
+          <p>Info</p>
+          <div>
+            <i class="fa-regular fa-envelope"></i>
+          </div>
+
+          <div>
+            <i class="fa-solid fa-phone"></i>
+          </div>
+
+          <div>
+            <i class="fa-solid fa-location-dot"></i>
+          </div>
+          <div>
+            <i class="fa-regular fa-clock"></i>
+          </div>
+        </div>
+        <div class="social-media-box">
+          <div class="media-icons">
+            <div>
+              <i class="fa-brands fa-facebook-f"></i>
+            </div>
+            <div>
+              <i class="fa-brands fa-instagram"></i>
+            </div>
+            <div>
+              <i class="fa-brands fa-linkedin-in"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>

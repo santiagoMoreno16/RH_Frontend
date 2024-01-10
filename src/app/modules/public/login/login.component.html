@@ -11,7 +11,7 @@
     <div class="inner">
       <div
         class="bar-container"
-        [ngStyle]="{ transform: selectedOption ? 'translateX(90%)' : '' }"
+        [ngClass]="{'translated': selectedOption}"
       >
         <div class="yellow-bar"></div>
         <div class="blue-bar"></div>
@@ -110,7 +110,7 @@
                 </button>
               </div>
               <div>
-                <button class="login-button" type="submit" (click)="login()">
+                <button class="login-button" type="submit">
                   Ingresar
                 </button>
               </div>

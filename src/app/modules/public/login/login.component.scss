@@ -107,13 +107,22 @@ section {
   align-items: center;
   justify-content: start;
   width: 1000px;
+  transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
 .bar {
   width: 20px;
   height: 600px;
   margin: 0 0 0 20px;
+  position: relative;
+  top: -20px;
 }
+
+.translated {
+  justify-content: end;
+  padding: 0 20px 0 0;
+}
+
 .blue-bar {
   @extend .bar;
   background: $primary-color;
@@ -144,6 +153,7 @@ section {
 }
 
 .login-form {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -151,6 +161,7 @@ section {
   width: 100%;
   height: 50%;
   transition: opacity 0.5s ease, transform 0.5s ease;
+  z-index: 2;
 
   &.show {
     opacity: 1;
