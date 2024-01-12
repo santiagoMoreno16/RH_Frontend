@@ -322,9 +322,7 @@
   font-size: 0.75rem;
 }
 
-
 // Personal Programs Styles =======================================================================
-
 
 .personal-programs {
   display: flex;
@@ -333,14 +331,13 @@
   flex-direction: column;
   width: 100%;
   padding: 0 30px 0 80px;
-  margin: 200px 0 200px 0;
+  margin: 200px 0 0 0;
 }
 
 .program-header {
   width: 100%;
   background-color: $quaternary-color;
   padding: 20px 0 20px 20px;
-  
 }
 
 .program-header h1 {
@@ -359,4 +356,209 @@
 
 .add-program-container button {
   @extend .edit-button;
+}
+
+// Program container styles */*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*
+
+.program-column {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.programs-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 300px;
+  padding: 0 30px 0 80px;
+  gap: 20px;
+}
+
+.programs-container .section-container {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.first-section {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  justify-content: end;
+  width: 100%;
+  margin: 0 20px 0 0 ;
+}
+
+.first-section div:nth-child(1) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 240px;
+  height: 58px;
+  margin-bottom: 10px;
+  background: #fff;
+  color: $title-color;
+  font-size: 1.25rem;
+}
+
+.first-section div:nth-child(2) {
+  height: 177px;
+  background: #fff;
+}
+
+.program-img {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: end;
+}
+
+.program-img p {
+  position: absolute;
+  color: $background-color;
+  font-size: 1.25rem;
+}
+
+.second-section {
+  width: 100%;
+  height: 244px;
+  background: $primary-color;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 10px 0 10px;
+  gap: 20px
+}
+
+.paragraph {
+  display: flex;
+  flex-direction: column;
+  width: 100% !important;
+  align-items: center;
+  justify-content: center;
+  color: $background-color;
+}
+
+.paragraph p {
+  font-size: 0.74rem;
+  margin: 0;
+}
+
+.paragraph .agreement {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  font-size: 0.938rem;
+  font-weight: bold;
+  width: 100%;
+}
+
+.agreement-img {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  width: 100%;
+  margin: 10px 0 0 0;
+}
+
+.agreement-container {
+  width: 100%;
+}
+
+.agreement-img .img-c {
+  width: 94px;
+  height: 94px;
+  border-radius: 50%;
+  background-color: $background-color;
+  overflow: hidden;
+}
+
+.stars-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: end;
+  justify-content: end;
+}
+
+.stars {
+  display: flex;
+  width: 55%;
+  height: 100%;
+  align-items: end;
+  justify-content: end;
+  color: $background-color;
+}
+
+.thrid-section {
+  width: 50%;
+  height: 244px;
+}
+$block-width: 240px;
+$block-height: 115px;
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, $block-width);
+  grid-template-rows: repeat(2, $block-height);
+  gap: 10px; 
+  
+  .col {
+    width: $block-width;
+    height: $block-height;
+    border: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3.125rem;
+    font-weight: bold;
+    text-align: center;
+    
+    &.requirement {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      justify-content: start;
+      color: $title-color;
+      background-color: $secondary-color;
+      padding: 5px 0 0 10px;
+    }
+    
+    &.redeem {
+      background-color: $quaternary-color;
+      font-size: 2.6rem;
+      color: #fff;
+    }
+    
+    &.to-apply {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      justify-content: start;
+      background-color: $quaternary-color;
+      color: #fff;
+      padding: 5px 0 0 10px;
+    }
+    
+    &.approve {
+      background-color: $primary-color;
+      font-size: 2.6rem;
+      color: #fff;
+    }
+  }
+  
+  @media (max-width: 992px) {
+    grid-template-columns: repeat(2, $block-width);
+    grid-template-rows: repeat(8, $block-height);
+  }
+  
+  @media (max-width: 576px) {
+    grid-template-columns: $block-width;
+    grid-template-rows: repeat(16, $block-height);
+  }
 }
