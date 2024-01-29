@@ -3,6 +3,7 @@ import {
   Router,
 } from '@angular/router';
 import { Observable } from 'rxjs';
+import { SessionService } from './services/session.service';
 // import { IniciarSesionService } from './servicios/iniciar-sesion.service';
 
 @Injectable({
@@ -11,15 +12,15 @@ import { Observable } from 'rxjs';
 export class VigilanteGuard {
   //Injection
   constructor(
-    // private iniciarSesionService: IniciarSesionService,
+    private sessionService: SessionService,
     private router: Router
   ) {}
 
   canActivate(): boolean {
-    // if (this.iniciarSesionService.verificarUser()) {
-    //   return true;
-    // }
-    // this.router.navigate(['/land/home']);
+    if (this.sessionService.verifyUser()) {
+      return true;
+    }
+    this.router.navigate(['/land/home']);
     return false;
   }
 }

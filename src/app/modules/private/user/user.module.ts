@@ -5,6 +5,7 @@ import { UserDetailsComponent } from './user-details/user-details.component';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { InternalHomeComponent } from '../control/internal-home/internal-home.component';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 
 
@@ -14,7 +15,8 @@ import { InternalHomeComponent } from '../control/internal-home/internal-home.co
     CommonModule,
     UserRoutingModule,
     FormsModule,
-    RouterModule
+    RouterModule,
+    NgxChartsModule
   ]
 })
 export class UserModule { }

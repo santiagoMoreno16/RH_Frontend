@@ -6,3 +6,8 @@ export const API_URL = environment.url;
 export const API_REGISTER = API_URL + 'api/auth';
 export const API_LOGIN = API_URL + 'api/auth';
 export const API_AUTH = API_URL + 'api/auth/';
+
+
+// User
+
+export const API_GET_USER = API_URL + 'api/user';

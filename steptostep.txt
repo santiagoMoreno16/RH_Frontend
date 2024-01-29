@@ -61,10 +61,11 @@ ng g m modules/private/user/user-routing --flat --module=user
 Modelos
 
 ng g class models/session  --skip-tests=true
-
+ng g class models/user  --skip-tests=true
 ng g class models/ResponseSession  --skip-tests=true
 
 
 # Servicios Session
 # ****************************************************
 ng g s services/session --skip-tests=true
+ng g s services/user --skip-tests=true

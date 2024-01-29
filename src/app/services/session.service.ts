@@ -14,8 +14,8 @@ import { SessionModel } from '../models/session.model';
 })
 export class SessionService {
 
-  public apiInicioSesion: string = miUrl.API_LOGIN + '/login';
-  public apiRegistrarUsuario: string = miUrl.API_REGISTER + '/register';
+  public apiSession: string = miUrl.API_LOGIN + '/login';
+  public apiRegister: string = miUrl.API_REGISTER + '/register';
   public objSession: MySession;
 
   constructor(private http: HttpClient, private router: Router) {
@@ -23,15 +23,15 @@ export class SessionService {
   }
 
   private iniciarlizarMiSesion(): MySession {
-    return new MySession('', '', '', '', '');
+    return new MySession('', '');
   }
 
   public iniciarSesion( objAccess: SessionModel ): Observable<ResponseSessionModel> {
-    return this.http.post<ResponseSessionModel>( this.apiInicioSesion, objAccess );
+    return this.http.post<ResponseSessionModel>( this.apiSession, objAccess );
   }
 
   // public registarUsuario( objAccess: RegistrarUsuario ): Observable<RespuestaInicioSesion> {
-  //   return this.http.post<RespuestaInicioSesion>( this.apiRegistrarUsuario, objAccess );
+  //   return this.http.post<RespuestaInicioSesion>( this.apiRegister, objAccess );
   // }
 
 
@@ -49,14 +49,11 @@ export class SessionService {
   public verifyUser(): boolean {
     if (localStorage.getItem('token')) {
       try {
-        const token: any = localStorage.getItem('token_usta');
+        const token: any = localStorage.getItem('token');
         const objTmp: any = jwtDecode(token);
         
         this.objSession.id = objTmp.id;
         this.objSession.email = objTmp.email;
-        this.objSession.city = objTmp.city;
-        this.objSession.name = objTmp.name;
-        this.objSession.lastName = objTmp.lastName;
 
         return true;
       } catch (error) {

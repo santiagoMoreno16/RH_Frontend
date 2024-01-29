@@ -10,6 +10,10 @@ import { ContainerModule } from './modules/container/container.module';
 import { ToastrModule } from 'ngx-toastr';
 import { HttpClientModule } from '@angular/common/http';
 
+import {NgxChartsModule}  from '@swimlane/ngx-charts';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
+
+
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -19,7 +23,9 @@ import { HttpClientModule } from '@angular/common/http';
     ToastrModule.forRoot(),
     
     ContainerModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxChartsModule,
+    BrowserAnimationsModule
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],

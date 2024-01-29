@@ -5,11 +5,11 @@ import { ContainerLandComponent } from './modules/container/land/container-land/
 import { RUTAS_LANDSCAPE } from './utils/routes/land-routes';
 import { ContainerDashComponent } from './modules/container/dash/container-dash/container-dash.component';
 import { RUTAS_DASHBOARD } from './utils/routes/dash-routes';
+import { VigilanteGuard } from './vigilant.guard';
 
 const routes: Routes = [
   {path: '', component: ContainerLandComponent, children: RUTAS_LANDSCAPE},
-  { path: 'private', component: ContainerDashComponent, children: RUTAS_DASHBOARD},
-  // { path: 'private', component: ContenedorDashComponent, children: RUTAS_DASHBOARD, canActivate: [VigilanteGuard]},
+  { path: 'private', component: ContainerDashComponent, children: RUTAS_DASHBOARD, canActivate: [VigilanteGuard]},
 
   {path: '**', component: ErrorComponent}
 ];

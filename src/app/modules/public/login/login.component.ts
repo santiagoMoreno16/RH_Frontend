@@ -56,7 +56,8 @@ export class LoginComponent implements OnInit, OnDestroy {
       .pipe(
         map((result: ResponseSessionModel) => {
           localStorage.setItem('token', result.token);
-          this.router.navigate(['/private/user/details']);
+          const id  = result.user.id
+          this.router.navigate(['/private/user/details/'+ id]);
           showMessage(
             'success',
             'Bienvenido al sistema',

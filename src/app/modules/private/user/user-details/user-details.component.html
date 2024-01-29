@@ -6,14 +6,15 @@
       <div class="profile-picture">
         <img src="assets/images/girl.svg" alt="profile" />
       </div>
-      <div class="status-circle">
+
+      <div class="status-circle" *ngIf="cargaFinalizada && userModel?.user">
         <p>¡Hola!</p>
-        <p class="profile-name">SOFÍA</p>
+        <p class="profile-name">{{oneName}}</p>
       </div>
     </div>
-    <div class="data-container">
+    <div class="data-container" *ngIf="cargaFinalizada && userModel?.user">
       <div>
-        <h2>Sofía Alaya</h2>
+        <h2>{{userModel?.user.firstName}}</h2>
       </div>
       <div>
         <p>Auxiliar Administrativo</p>
@@ -64,7 +65,7 @@
 <!-- Starts User Supplementary Content  -->
 
 <section>
-  <div class="supplementary-container">
+  <div class="supplementary-container" *ngIf="cargaFinalizada && userModel?.user">
     <div class="my-points">
       <p>Mis Puntos</p>
       <p>1680</p>
@@ -75,14 +76,14 @@
         Perfil
       </button>
     </div>
-    <div class="name-box">Sofía Ayala</div>
+    <div class="name-box">{{userModel?.user.firstName}} {{userModel?.user.lastName}}</div>
     <div class="content-box">
       <div class="box">
-        <div><strong>Identificación: </strong> CC 1.049.782.111</div>
+        <div><strong>Identificación: </strong>{{userModel?.user.identificationType}} {{userModel?.user.identificationNum}}</div>
         <div><strong>Cargo: </strong> Aux. Administrativo</div>
       </div>
       <div class="box">
-        <div><strong>Teléfono: </strong> 320 4445577</div>
+        <div><strong>Teléfono: </strong>{{userModel?.user.phone}} </div>
         <div><strong>Empresa: </strong> Cuidame.tech</div>
       </div>
       <div class="box">
@@ -271,3 +272,15 @@
 </section>
 
 <!-- Ends User Personal Programs Content  -->
+
+
+<ngx-charts-advanced-pie-chart
+  [view]="view"
+  scheme="fire"
+  [results]="single"
+  [gradient]="gradient"
+  (select)="onSelect($event)"
+  (activate)="onActivate($event)"
+  (deactivate)="onDeactivate($event)"
+  >
+</ngx-charts-advanced-pie-chart>
