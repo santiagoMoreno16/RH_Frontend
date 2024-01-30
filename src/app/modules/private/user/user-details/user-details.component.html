@@ -9,12 +9,12 @@
 
       <div class="status-circle" *ngIf="cargaFinalizada && userModel?.user">
         <p>¡Hola!</p>
-        <p class="profile-name">{{oneName}}</p>
+        <p class="profile-name">{{ oneName }}</p>
       </div>
     </div>
     <div class="data-container" *ngIf="cargaFinalizada && userModel?.user">
       <div>
-        <h2>{{userModel?.user.firstName}}</h2>
+        <h2>{{ userModel?.user.firstName }}</h2>
       </div>
       <div>
         <p>Auxiliar Administrativo</p>
@@ -62,10 +62,26 @@
 
 <!-- Ends User Details  -->
 
+<section>
+  <ngx-charts-advanced-pie-chart
+    [view]="view"
+    [scheme]="colorScheme"
+    [results]="single"
+    [gradient]="gradient"
+    (select)="onSelect($event)"
+    (activate)="onActivate($event)"
+    (deactivate)="onDeactivate($event)"
+  >
+  </ngx-charts-advanced-pie-chart>
+</section>
+
 <!-- Starts User Supplementary Content  -->
 
 <section>
-  <div class="supplementary-container" *ngIf="cargaFinalizada && userModel?.user">
+  <div
+    class="supplementary-container"
+    *ngIf="cargaFinalizada && userModel?.user"
+  >
     <div class="my-points">
       <p>Mis Puntos</p>
       <p>1680</p>
@@ -76,14 +92,20 @@
         Perfil
       </button>
     </div>
-    <div class="name-box">{{userModel?.user.firstName}} {{userModel?.user.lastName}}</div>
+    <div class="name-box">
+      {{ userModel?.user.firstName }} {{ userModel?.user.lastName }}
+    </div>
     <div class="content-box">
       <div class="box">
-        <div><strong>Identificación: </strong>{{userModel?.user.identificationType}} {{userModel?.user.identificationNum}}</div>
+        <div>
+          <strong>Identificación: </strong
+          >{{ userModel?.user.identificationType }}
+          {{ userModel?.user.identificationNum }}
+        </div>
         <div><strong>Cargo: </strong> Aux. Administrativo</div>
       </div>
       <div class="box">
-        <div><strong>Teléfono: </strong>{{userModel?.user.phone}} </div>
+        <div><strong>Teléfono: </strong>{{ userModel?.user.phone }}</div>
         <div><strong>Empresa: </strong> Cuidame.tech</div>
       </div>
       <div class="box">
@@ -193,8 +215,9 @@
             </div>
             <div class="stars-container">
               <div class="stars">
-                <i class="fa-regular fa-star"></i><i class="fa-solid fa-star"></i
+                <i class="fa-regular fa-star"></i
                 ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+                ><i class="fa-solid fa-star"></i
                 ><i class="fa-solid fa-star"></i>
               </div>
             </div>
@@ -205,12 +228,14 @@
         <!-- Grilla -->
         <div class="grid-container">
           <div class="col requirement">
-            <div style="font-size: 1.25rem; font-weight: normal;">Requisito:</div>
+            <div style="font-size: 1.25rem; font-weight: normal">
+              Requisito:
+            </div>
             <div>1200 pts</div>
           </div>
           <div class="col redeem">CANJEAR</div>
           <div class="col to-apply">
-            <div style="font-size: 1.25rem; font-weight: normal;">Tienes:</div>
+            <div style="font-size: 1.25rem; font-weight: normal">Tienes:</div>
             <div>1680 pts</div>
           </div>
           <div class="col approve">APROVAR</div>
@@ -244,8 +269,9 @@
             </div>
             <div class="stars-container">
               <div class="stars">
-                <i class="fa-regular fa-star"></i><i class="fa-solid fa-star"></i
+                <i class="fa-regular fa-star"></i
                 ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+                ><i class="fa-solid fa-star"></i
                 ><i class="fa-solid fa-star"></i>
               </div>
             </div>
@@ -256,12 +282,14 @@
         <!-- Grilla -->
         <div class="grid-container">
           <div class="col requirement">
-            <div style="font-size: 1.25rem; font-weight: normal;">Requisito:</div>
+            <div style="font-size: 1.25rem; font-weight: normal">
+              Requisito:
+            </div>
             <div>1200 pts</div>
           </div>
           <div class="col redeem">CANJEAR</div>
           <div class="col to-apply">
-            <div style="font-size: 1.25rem; font-weight: normal;">Tienes:</div>
+            <div style="font-size: 1.25rem; font-weight: normal">Tienes:</div>
             <div>1680 pts</div>
           </div>
           <div class="col approve">APROVAR</div>
@@ -272,15 +300,3 @@
 </section>
 
 <!-- Ends User Personal Programs Content  -->
-
-
-<ngx-charts-advanced-pie-chart
-  [view]="view"
-  scheme="fire"
-  [results]="single"
-  [gradient]="gradient"
-  (select)="onSelect($event)"
-  (activate)="onActivate($event)"
-  (deactivate)="onDeactivate($event)"
-  >
-</ngx-charts-advanced-pie-chart>
