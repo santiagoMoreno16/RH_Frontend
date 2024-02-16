@@ -23,7 +23,7 @@ export class SessionService {
   }
 
   private iniciarlizarMiSesion(): MySession {
-    return new MySession('', '');
+    return new MySession('', '', '');
   }
 
   public iniciarSesion( objAccess: SessionModel ): Observable<ResponseSessionModel> {

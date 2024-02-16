@@ -162,6 +162,7 @@ section {
   height: 50%;
   transition: opacity 0.5s ease, transform 0.5s ease;
   z-index: 2;
+  right: 30px;
 
   &.show {
     opacity: 1;
@@ -175,6 +176,7 @@ section {
     justify-content: start;
     margin: 0 0 20px 0;
     font-size: 1.3rem;
+    border-top: 1px solid $paragraph-color;
   }
 
   .form-group input {
@@ -204,7 +206,7 @@ section {
     display: flex;
     width: 50%;
     align-items: center;
-    justify-content: start;
+    justify-content: center;
   }
 
   .login-buttons {

@@ -28,31 +28,16 @@
       </div>
     </div>
     <div class="points-container">
-      <div>
-        <h2>Puntos por lograr</h2>
-      </div>
-      <div class="data-points-container">
-        <div class="points-names">
-          <p class="points">Puntos Estratégicos</p>
-          <p class="points">Puntos Tácticos</p>
-          <p class="points">Puntos Operacionales</p>
-          <p class="points">Puntos Personales</p>
-        </div>
-        <div class="points-numbers">
-          <div>
-            <p>500</p>
-          </div>
-          <div>
-            <p>1500</p>
-          </div>
-          <div>
-            <p>2000</p>
-          </div>
-          <div>
-            <p>1000</p>
-          </div>
-        </div>
-      </div>
+      <ngx-charts-advanced-pie-chart
+      [view]="view"
+      [scheme]="colorScheme"
+      [results]="single"
+      [gradient]="gradient"
+      (select)="onSelect($event)"
+      (activate)="onActivate($event)"
+      (deactivate)="onDeactivate($event)"
+    >
+    </ngx-charts-advanced-pie-chart>
     </div>
     <div class="button-container">
       <button class="button">Programa Personales</button>
@@ -63,16 +48,7 @@
 <!-- Ends User Details  -->
 
 <section>
-  <ngx-charts-advanced-pie-chart
-    [view]="view"
-    [scheme]="colorScheme"
-    [results]="single"
-    [gradient]="gradient"
-    (select)="onSelect($event)"
-    (activate)="onActivate($event)"
-    (deactivate)="onDeactivate($event)"
-  >
-  </ngx-charts-advanced-pie-chart>
+ 
 </section>
 
 <!-- Starts User Supplementary Content  -->
@@ -109,7 +85,7 @@
         <div><strong>Empresa: </strong> Cuidame.tech</div>
       </div>
       <div class="box">
-        <div><strong>Email: </strong> sofia.ayala.exxt&#64;cuidame.tech</div>
+        <div><strong>Email: </strong> s   ofia.ayala.exxt&#64;cuidame.tech</div>
         <div><strong>Fecha de Cumpleaños: </strong> 01-01-1990</div>
       </div>
     </div>
@@ -238,7 +214,7 @@
             <div style="font-size: 1.25rem; font-weight: normal">Tienes:</div>
             <div>1680 pts</div>
           </div>
-          <div class="col approve">APROVAR</div>
+          <div class="col approve">APROBAR</div>
         </div>
       </div>
     </div>
@@ -292,7 +268,7 @@
             <div style="font-size: 1.25rem; font-weight: normal">Tienes:</div>
             <div>1680 pts</div>
           </div>
-          <div class="col approve">APROVAR</div>
+          <div class="col approve">APROBAR</div>
         </div>
       </div>
     </div>

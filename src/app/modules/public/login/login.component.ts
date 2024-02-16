@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit, OnDestroy {
     public sessionService: SessionService,
     public toastr: ToastrService
   ) {
-    this.objUser = new SessionModel('', '');
+    this.objUser = new SessionModel('', '', '');
     this.mySubcription = this.tmp;
   }
 
@@ -49,7 +49,8 @@ export class LoginComponent implements OnInit, OnDestroy {
   public operations(formulario: NgForm): void {
     const pass = this.objUser.password
     const email: any = this.objUser.email;
-    const objSession = new SessionModel(email, pass);
+    const objSession = new SessionModel(email, pass, this.selectedOption);
+    
 
     this.mySubcription = this.sessionService
       .iniciarSesion(objSession)
