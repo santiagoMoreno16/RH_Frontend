@@ -33,7 +33,20 @@ export class LoginComponent implements OnInit, OnDestroy {
     this.mySubcription = this.tmp;
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    const token = localStorage.getItem('token');
+    if (token) {
+      this.sessionService.validateToken(token).subscribe(
+        () => {
+          const userId = this.sessionService.getUserIdFromToken(token);
+          this.router.navigate(['/private/user/details/' + userId]);
+        },
+        () => {
+          localStorage.removeItem('token');
+        }
+      );
+    }
+  }
 
   ngOnDestroy() {
     if (this.mySubcription) {
@@ -47,18 +60,17 @@ export class LoginComponent implements OnInit, OnDestroy {
   }
 
   public operations(formulario: NgForm): void {
-    const pass = this.objUser.password
+    const pass = this.objUser.password;
     const email: any = this.objUser.email;
     const objSession = new SessionModel(email, pass, this.selectedOption);
-    
 
     this.mySubcription = this.sessionService
       .iniciarSesion(objSession)
       .pipe(
         map((result: ResponseSessionModel) => {
           localStorage.setItem('token', result.token);
-          const id  = result.user.id
-          this.router.navigate(['/private/user/details/'+ id]);
+          const id = result.user.id;
+          this.router.navigate(['/private/user/details/' + id]);
           showMessage(
             'success',
             'Bienvenido al sistema',
@@ -81,7 +93,6 @@ export class LoginComponent implements OnInit, OnDestroy {
       )
       .subscribe(observadorAny);
   }
-
 
   cancel() {
     this.resetState();

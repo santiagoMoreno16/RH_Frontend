@@ -42,7 +42,9 @@ ng g enum utils/routes/dashRoutes
 # ****************************************************
 private 
 
-ng g c modules/private/UserDetails
+ng g c modules/private/user/UserDetails
+ng g c modules/private/user/programs
+ng g c modules/private/course/course
 
 
 ng g m modules/private/control
@@ -55,7 +57,8 @@ ng g c modules/private/control/internalHome
 ng g m modules/private/user
 ng g m modules/private/user/user-routing --flat --module=user
 
-
+ng g m modules/private/course
+ng g m modules/private/course/course-routing --flat --module=course
 
 # *****************************************************
 Modelos

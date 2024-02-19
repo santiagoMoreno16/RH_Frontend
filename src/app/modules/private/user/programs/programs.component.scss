@@ -1,0 +1,31 @@
+@import "../../../../app.component.scss";
+
+.requirement {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    color: $title-color;
+    background-color: $secondary-color;
+    padding: 5px 0 0 10px;
+  }
+  
+  .redeem {
+    background-color: $quaternary-color;
+    display: flex;
+    flex-direction: column;
+    align-items: start !important;
+    justify-content: start !important;
+    color: $title-color;
+    padding: 5px 0 0 10px;
+    font-size: 3.25rem !important;
+    color: #fff;
+  }
+
+  .approve {
+    font-size: 2rem !important;
+    cursor: pointer;
+  }
+@import "../user-details/user-details.component.scss"
+
+

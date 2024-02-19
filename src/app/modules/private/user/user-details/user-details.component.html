@@ -29,27 +29,20 @@
     </div>
     <div class="points-container">
       <ngx-charts-advanced-pie-chart
-      [view]="view"
-      [scheme]="colorScheme"
-      [results]="single"
-      [gradient]="gradient"
-      (select)="onSelect($event)"
-      (activate)="onActivate($event)"
-      (deactivate)="onDeactivate($event)"
-    >
-    </ngx-charts-advanced-pie-chart>
+        [view]="view"
+        [scheme]="colorScheme"
+        [results]="single"
+        [gradient]="gradient"
+      >
+      </ngx-charts-advanced-pie-chart>
     </div>
     <div class="button-container">
-      <button class="button">Programa Personales</button>
+      <button class="button" [routerLink]="['/private/user/programs']">Programas</button>
     </div>
   </div>
 </section>
 
 <!-- Ends User Details  -->
-
-<section>
- 
-</section>
 
 <!-- Starts User Supplementary Content  -->
 
@@ -58,10 +51,6 @@
     class="supplementary-container"
     *ngIf="cargaFinalizada && userModel?.user"
   >
-    <div class="my-points">
-      <p>Mis Puntos</p>
-      <p>1680</p>
-    </div>
     <div class="edit-container">
       <button class="edit-button">
         <img src="assets/icons/feather_edit.svg" alt="Pencil-edit" /> Editar
@@ -85,7 +74,7 @@
         <div><strong>Empresa: </strong> Cuidame.tech</div>
       </div>
       <div class="box">
-        <div><strong>Email: </strong> s   ofia.ayala.exxt&#64;cuidame.tech</div>
+        <div><strong>Email: </strong> s ofia.ayala.exxt&#64;cuidame.tech</div>
         <div><strong>Fecha de Cumpleaños: </strong> 01-01-1990</div>
       </div>
     </div>
@@ -96,7 +85,7 @@
 
 <!-- Starts User Benefits Content  -->
 
-<section>
+<!-- <section>
   <div class="benefits">
     <div class="benefits-title">
       <h1>Mis beneficios</h1>
@@ -147,7 +136,7 @@
       </div>
     </div>
   </div>
-</section>
+</section> -->
 
 <!-- Ends User Benefits Content  -->
 
@@ -201,7 +190,6 @@
         </div>
       </div>
       <div class="thrid-section">
-        <!-- Grilla -->
         <div class="grid-container">
           <div class="col requirement">
             <div style="font-size: 1.25rem; font-weight: normal">
@@ -212,7 +200,7 @@
           <div class="col redeem">CANJEAR</div>
           <div class="col to-apply">
             <div style="font-size: 1.25rem; font-weight: normal">Tienes:</div>
-            <div>1680 pts</div>
+            <div>{{ totalPoints }} pts</div>
           </div>
           <div class="col approve">APROBAR</div>
         </div>
@@ -255,7 +243,6 @@
         </div>
       </div>
       <div class="thrid-section">
-        <!-- Grilla -->
         <div class="grid-container">
           <div class="col requirement">
             <div style="font-size: 1.25rem; font-weight: normal">
@@ -266,7 +253,7 @@
           <div class="col redeem">CANJEAR</div>
           <div class="col to-apply">
             <div style="font-size: 1.25rem; font-weight: normal">Tienes:</div>
-            <div>1680 pts</div>
+            <div>{{ totalPoints }} pts</div>
           </div>
           <div class="col approve">APROBAR</div>
         </div>
@@ -276,3 +263,36 @@
 </section>
 
 <!-- Ends User Personal Programs Content  -->
+
+<!-- Starts Courses -->
+
+<section>
+  <div class="personal-programs">
+    <div class="program-header">
+      <h1>Mis Cursos</h1>
+    </div>
+
+    <div class="course-container">
+      <div><img src="assets/images/team.svg" alt="team" /></div>
+      <div class="course-information">
+        <div class="course-title">
+          <p>Curso de Conceptos Básicos de SG-SST</p>
+          <p>Curso por el Ing. Camilo Gómez</p>
+        </div>
+        <div class="course-progress">
+            <div class="horizontal-bar-container">
+              <div class="horizontal-bar-fill"></div>
+          </div>
+          <div>3 Unidades Completadas de 4 Disponibles</div>
+        </div>
+        <div class="course-button">
+          <button class="c-button">Continuar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Starts Courses -->
+
+

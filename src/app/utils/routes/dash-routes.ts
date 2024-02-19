@@ -19,6 +19,13 @@ export const RUTAS_DASHBOARD: Routes = [
     loadChildren: () =>
       import('../../modules/private/user/user.module').then((m) => m.UserModule),
   },
+
+    // Course Routing
+    {
+      path: 'course',
+      loadChildren: () =>
+        import('../../modules/private/course/course.module').then((m) => m.CourseModule),
+    },
   
     { path: '', redirectTo: 'dash', pathMatch: 'full' },
     { path: '**', component: InternalErrorComponent },

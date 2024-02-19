@@ -6,11 +6,12 @@ import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { InternalHomeComponent } from '../control/internal-home/internal-home.component';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { ProgramsComponent } from './programs/programs.component';
 
 
 
 @NgModule({
-  declarations: [UserDetailsComponent],
+  declarations: [UserDetailsComponent, ProgramsComponent],
   imports: [
     CommonModule,
     UserRoutingModule,

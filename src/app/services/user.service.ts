@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import * as serverUrl from '../utils/domain/uris';
-import { Observable } from 'rxjs';
+import { Observable, map } from 'rxjs';
 import { User } from '../models/user';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
@@ -14,33 +14,31 @@ interface Points {
   providedIn: 'root',
 })
 export class UserService {
-  private data: Points[] = [
-    {
-      name: 'Puntos Estratégicos',
-      value: 500,
-    },
-    {
-      name: 'Puntos Tácticos',
-      value: 1500,
-    },
-    {
-      name: 'Puntos Operacionales',
-      value: 2000,
-    },
-    {
-      name: 'Puntos Personales',
-      value: 1000,
-    },
-  ];
+  private data: Points[] = []
 
   public apiGetUser: string = serverUrl.API_GET_USER;
+  public apiGetUserPoints: string = serverUrl.API_GET_USER_POINTS;
 
   constructor(private http: HttpClient) {}
   public getUser(id: string): Observable<User> {
     return this.http.get<User>(`${this.apiGetUser}/${id}`);
   }
 
-  get points() {
-    return this.data;
+  public getUserPoints(id: string): Observable<Points[]> {
+    return this.http.get<any[]>(`${this.apiGetUserPoints}/${id}`).pipe(
+      map((data: any) => {
+        if (data && data.points) {
+          return data.points.map((point: any) => {
+            return {
+              name: point.name,
+              value: point.value,
+            };
+          });
+        } else {
+          return [];
+        }
+      })
+    );
   }
+
 }
