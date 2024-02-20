@@ -1,40 +1,52 @@
 <div class="course-container">
   <div class="sidebar">
     <ul>
-      <li>
+      <li (click)="openContent('courseBook')">
         <img src="assets/icons/course-book.svg" alt="course-book" />
         <span>PORTADA</span>
       </li>
-      <li>
+      <li (click)="openContent('syllabus')">
         <img src="assets/icons/course-bookmark.svg" alt="course-bookmark" />
         <span>TEMARIO</span>
       </li>
-      <li>
+      <li (click)="openContent('whoTeach')">
         <img
           src="assets/icons/course-chalkboard-teacher.svg"
           alt="course-chalkboard-teacher"
         />
         <span>QUIÉN ENSEÑA</span>
       </li>
+      @if (syllabus || courseTest || conceptAssessment || courseValoration) {
+      <li (click)="openContent('courseTest')">
+        <img
+          src="assets/icons/course-chalkboard-teacher.svg"
+          alt="course-chalkboard-teacher"
+        />
+        <span>EVALUACIÓN DEL CURSO</span>
+      </li>
+      }
     </ul>
   </div>
 
   <div class="content">
+    @if (courseBook) {
     <div class="course-description">
       <div class="course-title">Curso de Conceptos Básicos de SG-SST</div>
-      <div>
-       <div class="course-stars">
-        <i class="fa-regular fa-star"></i><i class="fa-solid fa-star"></i
+      <div class="course-qualification">
+        <div class="course-stars">
+          <i class="fa-regular fa-star"></i><i class="fa-solid fa-star"></i
           ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
           ><i class="fa-solid fa-star"></i>
-       </div>
-       <div><button>Básico</button></div>
+        </div>
+        <div class="qua-square"><button>Básico</button></div>
       </div>
       <div class="course-paragraph">
         <p>
           Capacitación que tiene como objetivo el brindar los conceptos
           necesarios que todos trabajador debe de tener para su cuidado y el
-          cuidado de los demás. Aca aprenderas:
+          cuidado de los demás. <br />
+          <br />
+          Acá aprenderás: <br />
         </p>
         <p>1. La importancia del SG-SST.</p>
         <p>2. Que es un Incidente de Seguridad.</p>
@@ -47,9 +59,52 @@
         </div>
       </div>
     </div>
-    <div class="course-img-background">
-      <img src="" alt="">
+    } @if (whoTeach) {
+    <div class="teacher-container">
+      <div>
+        <img src="assets/images/young_man.svg" alt="Teacher" />
+      </div>
+      <div class="teacher-description">
+        <div class="teacher-title">
+          Conoce quién enseña el Curso de Conceptos Básicos de SG-SST
+        </div>
+        <div class="teacher-name">Camilo López</div>
+        <div class="teacher-desc">
+          Es ingeniero Industrial de la universidad de san pepito, con master en
+          Sg-SST, con mas de 10 años de experiencia.
+        </div>
+        <div class="teacher-footer">
+          Design for the future, design for everyone
+        </div>
+      </div>
     </div>
-    
+
+    } @if (syllabus) {
+    <div class="syllabus">
+      <div class="board-header">
+        Capacitación Conceptos Básicos de Seguridad y Salud en el Trabajo
+      </div>
+      <div class="board"></div>
+    </div>
+    } @if (!syllabus && !courseTest && !conceptAssessment && !courseValoration) {
+    <div class="course-img-background">
+      <img src="assets/images/course_lady.svg" alt="Course" />
+    </div>
+    } @if(courseTest){
+    <div class="card-box">
+      <div class="card" (click)="openContent('conceptAssessment')">
+        <div class="card-img-box">
+          <img src="assets/images/workers.svg" alt="Course_test" />
+        </div>
+        <div class="card-box-footer">Evaluación de Conceptos</div>
+      </div>
+      <div class="card" (click)="openContent('courseValoration')">
+        <div class="card-img-box">
+          <img src="assets/images/workers_2.svg" alt="course_test" />
+        </div>
+        <div class="card-box-footer">Evaluación del Curso</div>
+      </div>
+    </div>
+    }
   </div>
 </div>

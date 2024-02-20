@@ -1,39 +1,259 @@
-@import '../../../../app.component.scss';
+@import "../../../../app.component.scss";
 
 .course-container {
-    display: flex;
-    margin-top: 150px;
-    width: 100%;
+  display: flex;
+  margin-top: 150px;
+  width: 100%;
+}
 
-  }
-  
-  .sidebar {
-    width: 200px; 
-    background-color: $course-background-color;
-  }
+.sidebar {
+  width: 200px;
+  background-color: $course-background-color;
+}
 
-  .sidebar ul {
-    list-style-type: none;
-    padding: 0;
-    cursor: pointer;
-  }
-  
-  .sidebar li {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 25px 10px 25px 10px;
-  }
-  
-  .sidebar span {
-    font-size: 14px;
-    color: $title-color;
-    font-weight: bold;
-  }
-  
-  
-  .content {
-    flex: 1; 
-    background-color: $course-background-color;
-  }
-  
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.sidebar li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 25px 10px 25px 10px;
+}
+
+.sidebar span {
+  font-size: 14px;
+  color: $title-color;
+  font-weight: bold;
+}
+
+.content {
+  flex: 1;
+  background-color: $course-background-color;
+  display: flex;
+}
+
+.course-description {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: space-between;
+  width: 700px;
+  z-index: 2;
+}
+
+.course-title {
+  font-size: 1.875rem;
+  color: $title-color;
+  font-weight: bold;
+  width: 100%;
+  margin: 0 0 30px 0;
+}
+
+.course-paragraph {
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  width: 100%;
+  color: $title-color;
+  margin: 0 0 50px 0;
+}
+
+.course-paragraph p {
+  margin: 0;
+}
+
+.course-stars {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: space-between;
+  color: $tertiary-color;
+}
+
+.course-qualification {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 0 20px 0;
+}
+
+.qua-square {
+  width: 30%;
+}
+
+.qua-square button {
+  color: $quaternary-color;
+  border: 2px solid $quaternary-color;
+  padding: 5px 10px 5px 10px;
+  background-color: transparent;
+  cursor: none;
+}
+
+.start-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+
+.start-course {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.start-course {
+  background: $primary-color;
+  border-radius: 10px;
+  font-size: 0.938rem;
+  padding: 10px;
+  height: 65px;
+  width: 75%;
+  color: $text-color;
+}
+
+.start-course button {
+  border-radius: 5px;
+  background-color: $quaternary-color;
+  padding: 10px;
+  font-size: 0.938rem;
+  font-weight: bold;
+  margin: 0 0 0 10px;
+  color: #fff;
+}
+
+.course-img-background {
+  width: 50%;
+}
+.course-img-background img {
+  position: absolute;
+  top: 130px;
+  right: 60px;
+}
+
+// Who Teaches the course
+
+.teacher-container {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: space-between;
+  width: 409px;
+  height: 450px;
+  z-index: 2;
+  background-color: #fff;
+}
+
+.teacher-container img {
+  width: 100%;
+}
+
+.teacher-description {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  color: $quaternary-color;
+  font-size: 0.938rem;
+}
+
+.teacher-text-box {
+  width: 100%;
+}
+
+.teacher-title {
+  @extend .teacher-text-box;
+}
+
+.teacher-name {
+  @extend .teacher-text-box;
+  font-weight: bold;
+}
+
+.teacher-desc {
+  @extend .teacher-text-box;
+}
+
+.teacher-footer {
+  @extend .teacher-text-box;
+}
+
+// Syllabus
+
+.syllabus {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  width: 100% !important;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+}
+
+.board-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+  background-color: $quaternary-color;
+  padding: 30px;
+  font-size: 1.875rem;
+  color: #fff;
+  font-weight: bold;
+}
+
+.board {
+  width: 90%;
+  height: 60vh;
+  background-image: url("/assets/images/board.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+// Course test styles
+
+.card-box {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 200px;
+  height: 60vh;
+}
+
+.card-img-box {
+  height: 328px;
+  overflow: hidden;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  width: 239px;
+  height: 410px;
+  box-shadow: 0 0 20px 0px #9e9e9e;
+  cursor: pointer;
+}
+
+.card-box-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 71px;
+  font-size: 0.875rem;
+  color: #707070;
+  font-weight: bold;
+}
