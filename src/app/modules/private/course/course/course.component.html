@@ -55,7 +55,7 @@
       <div class="start-container">
         <div class="start-course">
           !Mira la primera clase de este curso!
-          <button>COMIENZA AHORA</button>
+          <button (click)="openContent('syllabus')">COMIENZA AHORA</button>
         </div>
       </div>
     </div>
@@ -86,7 +86,8 @@
       </div>
       <div class="board"></div>
     </div>
-    } @if (!syllabus && !courseTest && !conceptAssessment && !courseValoration) {
+    } @if (!syllabus && !courseTest && !conceptAssessment && !courseValoration)
+    {
     <div class="course-img-background">
       <img src="assets/images/course_lady.svg" alt="Course" />
     </div>
@@ -103,6 +104,114 @@
           <img src="assets/images/workers_2.svg" alt="course_test" />
         </div>
         <div class="card-box-footer">Evaluación del Curso</div>
+      </div>
+    </div>
+    } @if (conceptAssessment) {
+    <div class="test-container">
+      <div id="carouselExampleIndicators" class="carousel slide">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="test-card">
+              <div class="card-inner-img">
+                <img src="assets/images/question_img_3.svg" alt="q-img">
+              </div>
+              <div class="card-content">
+                <div class="question">Un Accidente de Trabajo se considera cuando:</div>
+                <div class="answers">
+                  <div class="question-option">
+                    <input class="form-check-input" type="radio"> <label>Voy por el pasillo y casi me caigo, por que le piso estaba mojado.</label>
+                  </div>
+                  <div class="question-option">
+                    <input class="form-check-input" type="radio"> <label>Estaba armando un mueble y me machuque con el martillo.</label>
+                  </div>
+                  <div class="question-option">
+                    <input class="form-check-input" type="radio"> <label>Estaba en un quinto piso y un compañero estaba trabajando sin la línea de vida.</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="test-card">
+              <div class="card-inner-img">
+                <img src="assets/images/question_img_2.svg" alt="q-img">
+
+              </div>
+              <div class="card-content">
+                <div class="question">Estaba en la obra, estamos trabajando bajo presión por que debemos entregar el trabajo este mismo día, encontramos que tenemos una fuga en tejado y mi compañero se sube, sin protección a taparla, logrando así cumplir con los tiempos correctos. Todo el equipo lo felicito y realizo de manera excelente su trabajo. ¿Estuvo bien su trabajo?</div>
+                <div class="answers">
+                  <div class="question-option">
+                    <input class="form-check-input" type="radio"> <label>Si</label>
+                  </div>
+                  <div class="question-option">
+                    <input class="form-check-input" type="radio"> <label>No</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="test-card">
+              <div class="card-inner-img">
+                <img src="assets/images/question_img_2.svg" alt="q-img">
+
+
+              </div>
+              <div class="card-content">
+                <div class="question">Un riesgo es cuando un evento ocurre en el trabajo y existen personas eridas</div>
+                <div class="answers">
+                  <div class="question-option">
+                    <input class="form-check-input" type="radio"> <label>Verdadero</label>
+                  </div>
+                  <div class="question-option">
+                    <input class="form-check-input" type="radio"> <label>Falso</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="test-card">
+              <div class="card-inner-img">
+                <img src="assets/images/question_img_4.svg" alt="q-img">
+              </div>
+              <div class="card-content">
+                <div class="question">Seleccione cuales de los siguientes artículos son EPP:</div>
+                <div class="answers">
+                  <div class="question-option">
+                    <input class="form-check-input" type="radio"> <label>El Casco para ingresar a la obra.</label>
+                  </div>
+                  <div class="question-option">
+                    <input class="form-check-input" type="radio"> <label>El forro del Celular.</label>
+                  </div>
+                  <div class="question-option">
+                    <input class="form-check-input" type="radio"> <label>Los guantes.</label>
+                  </div>
+                  <div class="question-option">
+                    <input class="form-check-input" type="radio"> <label>El carnet de identificación.</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="end-test">
+              <button class="end-test-button" (click)="endTest('courseValoration')">Finalizar</button>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
       </div>
     </div>
     }

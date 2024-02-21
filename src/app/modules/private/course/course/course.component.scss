@@ -257,3 +257,84 @@
   color: #707070;
   font-weight: bold;
 }
+
+// Tests evaluate
+
+.test-container {
+  width: 95%;
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.test-card {
+  display: flex;
+  width: 676px;
+  height: 376px;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  color: $quaternary-color;
+  font-size: 0.938rem;
+  height: 100%;
+  width: 100%;
+  gap: 50px;
+
+}
+
+.question{
+  font-weight: bold;
+}
+
+.answers {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.question-option {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+}
+
+.card-inner-img{
+  width: 40%;
+}
+
+.carousel-indicators {
+  bottom: 450px !important;
+}
+
+carousel-indicators [data-bs-target] {
+  width: 100px;
+  height: 10px;
+  background-color: $quaternary-color;
+}
+
+.form-check-input:checked {
+  background-color: $quaternary-color;
+  border-color: $tertiary-color;
+}
+
+.end-test {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+
+.end-test-button {
+  padding: 10px 20px 10px 20px;
+  margin: 20px 0;
+  border: 1px solid $title-color;
+  background: #fff;
+  color: $quaternary-color;
+  font-weight: bold;
+}

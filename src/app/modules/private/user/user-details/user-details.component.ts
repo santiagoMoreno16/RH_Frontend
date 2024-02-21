@@ -70,7 +70,7 @@ export class UserDetailsComponent implements OnInit {
         this.userModel = res;
         this.getOneName();
         this.cargaFinalizada = true;
-        this.getPoints(id);
+        this.getPoints(this.userModel.user.id);
       },
       (error) => {
         console.error("Error al obtener el usuario:", error);

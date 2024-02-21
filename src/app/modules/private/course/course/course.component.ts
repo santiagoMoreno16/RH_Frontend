@@ -12,6 +12,7 @@ export class CourseComponent implements OnInit {
   courseTest: Boolean = false;
   conceptAssessment: Boolean = false;
   courseValoration: Boolean = false;
+  courseEvaluation: Boolean = false;
 
 
   openContent(content: string) {
@@ -21,6 +22,11 @@ export class CourseComponent implements OnInit {
     this.courseTest = content === 'courseTest';
     this.conceptAssessment = content === 'conceptAssessment';
     this.courseValoration = content === 'courseValoration';
+    this.courseEvaluation = content === 'courseEvaluation';
+  }
+
+  endTest(content: string){
+    this.courseTest = content === 'courseTest';
   }
 
   constructor() {}
