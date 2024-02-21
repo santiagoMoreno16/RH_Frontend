@@ -12,6 +12,8 @@ export const API_VALIDATE = API_URL + 'api/auth/';
 // User
 
 export const API_GET_USER = API_URL + 'api/user';
+export const API_GET_USER_EMAIL = API_URL + 'api/auth';
+
 
 // Points
 

@@ -4,6 +4,7 @@ import { Observable, map } from 'rxjs';
 import { User } from '../models/user';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { MySession } from '../models/my-session';
 
 interface Points {
   name: string;
@@ -17,11 +18,16 @@ export class UserService {
   private data: Points[] = []
 
   public apiGetUser: string = serverUrl.API_GET_USER;
+  public apiGetUserEmail: string = serverUrl.API_GET_USER_EMAIL;
   public apiGetUserPoints: string = serverUrl.API_GET_USER_POINTS;
 
   constructor(private http: HttpClient) {}
   public getUser(id: string): Observable<User> {
     return this.http.get<User>(`${this.apiGetUser}/${id}`);
+  }
+
+  public getAccess(id: string): Observable<MySession> {
+    return this.http.get<MySession>(`${this.apiGetUserEmail}/${id}`);
   }
 
   public getUserPoints(id: string): Observable<Points[]> {

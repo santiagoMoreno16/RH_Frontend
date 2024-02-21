@@ -35,6 +35,7 @@ export class UserDetailsComponent implements OnInit {
   };
 
   private tmp: any;
+  public email: any;
   public userModel: any = User;
   public id: string = '';
   public cargaFinalizada: boolean;
@@ -64,6 +65,12 @@ export class UserDetailsComponent implements OnInit {
     });
   }
 
+  getAccessData(id: string){
+    this.userService.getAccess(id).subscribe((email) => {
+      this.email = email.email;
+    });
+  }
+
   private getUserData(id: string): void {
     this.userService.getUser(id).subscribe(
       (res) => {
@@ -71,6 +78,7 @@ export class UserDetailsComponent implements OnInit {
         this.getOneName();
         this.cargaFinalizada = true;
         this.getPoints(this.userModel.user.id);
+        this.getAccessData(id);
       },
       (error) => {
         console.error("Error al obtener el usuario:", error);
