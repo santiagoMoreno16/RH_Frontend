@@ -1,0 +1,136 @@
+@import "../../app.component.scss";
+
+.content-dialog {
+  width: 834px;
+  height: 534px;
+  display: flex;
+  border-radius: 10px;
+  background-color: #eceae6;
+}
+
+.content-img {
+  width: 100%;
+}
+
+.content-data {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  height: 100%;
+  padding: 50px;
+  gap: 30px;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: $quaternary-color;
+  width: 100%;
+}
+
+p {
+    margin: 0;
+}
+
+.congrats {
+    color: $title-color;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  width: 100%;
+  color: $title-color;
+  font-size: 1.25rem;
+}
+
+.achieve {
+    flex-direction: column;
+    gap: 5px;
+}
+
+.item-options {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  padding: 10px;
+  color: #fff;
+  font-size: 1.125rem;
+  width: 121px;
+  height: 50px;
+}
+
+.item-1 {
+  @extend .item-options;
+  background-color: $quaternary-color;
+}
+
+.item-2 {
+  @extend .item-options;
+  background-color: $secondary-color;
+}
+
+.item-3 {
+  @extend .item-options;
+  background-color: $quaternary-color;
+}
+.option {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  font-size: 0.813rem;
+  color: #fff;
+  padding: 10px;
+  width: 121px;
+  height: 50px;
+  background-color: $primary-color;
+}
+
+.item-container {
+font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60%;
+  gap: 5px;
+}
+
+
+.start-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .start-course {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .start-course {
+    background: $primary-color;
+    border-radius: 10px;
+    font-size: 0.938rem;
+    padding: 10px;
+    height: 65px;
+    width: 100%;
+    color: $text-color;
+  }
+
+  .start-course button {
+    border-radius: 5px;
+    background-color: $quaternary-color;
+    padding: 0 10px 0 10px;
+    font-size: 0.938rem;
+    font-weight: bold;
+    margin: 0 0 0 10px;
+    color: #fff;
+  }
+  

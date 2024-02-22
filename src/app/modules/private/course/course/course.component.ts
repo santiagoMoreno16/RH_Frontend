@@ -25,9 +25,6 @@ export class CourseComponent implements OnInit {
     this.courseEvaluation = content === 'courseEvaluation';
   }
 
-  endTest(content: string){
-    this.courseTest = content === 'courseTest';
-  }
 
   constructor() {}
 

@@ -37,7 +37,9 @@
       </ngx-charts-advanced-pie-chart>
     </div>
     <div class="button-container">
-      <button class="button" [routerLink]="['/private/user/programs']">Programas</button>
+      <button class="button" [routerLink]="['/private/user/programs']">
+        Programas
+      </button>
     </div>
   </div>
 </section>
@@ -74,7 +76,7 @@
         <div><strong>Empresa: </strong> Cuidame.tech</div>
       </div>
       <div class="box">
-        <div><strong>Email: </strong>{{email}}</div>
+        <div><strong>Email: </strong>{{ email }}</div>
         <div><strong>Fecha de Cumpleaños: </strong> 01-01-1990</div>
       </div>
     </div>
@@ -197,7 +199,7 @@
             </div>
             <div>1200 pts</div>
           </div>
-          <div class="col redeem">CANJEAR</div>
+          <div class="col redeem" (click)="openModal()">CANJEAR</div>
           <div class="col to-apply">
             <div style="font-size: 1.25rem; font-weight: normal">Tienes:</div>
             <div>{{ totalPoints }} pts</div>
@@ -250,7 +252,7 @@
             </div>
             <div>1200 pts</div>
           </div>
-          <div class="col redeem">CANJEAR</div>
+          <div class="col redeem" (click)="openModal()">CANJEAR</div>
           <div class="col to-apply">
             <div style="font-size: 1.25rem; font-weight: normal">Tienes:</div>
             <div>{{ totalPoints }} pts</div>
@@ -280,8 +282,8 @@
           <p>Curso por el Ing. Camilo Gómez</p>
         </div>
         <div class="course-progress">
-            <div class="horizontal-bar-container">
-              <div class="horizontal-bar-fill"></div>
+          <div class="horizontal-bar-container">
+            <div class="horizontal-bar-fill"></div>
           </div>
           <div>3 Unidades Completadas de 4 Disponibles</div>
         </div>
@@ -295,4 +297,6 @@
 
 <!-- Starts Courses -->
 
-
+<!-- Starts Redeem Modal -->
+<button (click)="openModal()">Open Dialog Custom</button>
+<!-- Ends Redeem Modal -->

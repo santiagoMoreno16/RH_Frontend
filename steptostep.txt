@@ -72,3 +72,11 @@ ng g class models/ResponseSession  --skip-tests=true
 # ****************************************************
 ng g s services/session --skip-tests=true
 ng g s services/user --skip-tests=true
+
+
+# Modals
+# ****************************************************
+
+ng g c utils/modals/redeemPoints
+
+ng g s services/switch --skip-tests=true

@@ -4,6 +4,7 @@ import { Color, ScaleType } from '@swimlane/ngx-charts';
 import { ToastrService } from 'ngx-toastr';
 import { Subscription } from 'rxjs';
 import { User } from 'src/app/models/user';
+import { DialogService } from 'src/app/services/dialog.service';
 import { UserService } from 'src/app/services/user.service';
 
 
@@ -48,7 +49,8 @@ export class UserDetailsComponent implements OnInit {
     public router: Router,
     public userService: UserService,
     public toastr: ToastrService,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private dialogService: DialogService
   ) {
     this.sub = this.tmp;
     this.cargaFinalizada = false;
@@ -88,11 +90,12 @@ export class UserDetailsComponent implements OnInit {
 
 
   ngOnInit(): void {
+
+    
     this.activatedRoute.params.subscribe((params) => {
       this.id = params['id'];
       this.getUserData(this.id);
     });
-
     if (this.sub) this.sub.unsubscribe();
   }
 
@@ -110,6 +113,10 @@ export class UserDetailsComponent implements OnInit {
 
   private calculateTotalPoints(): void {
     this.totalPoints = this.data.reduce((total, point) => total + point.value, 0);
+  }
+
+  openModal(){
+    this.dialogService.open()
   }
 
   onSelect(data: any): void {
