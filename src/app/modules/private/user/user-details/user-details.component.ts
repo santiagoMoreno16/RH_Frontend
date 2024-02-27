@@ -90,8 +90,6 @@ export class UserDetailsComponent implements OnInit {
 
 
   ngOnInit(): void {
-
-    
     this.activatedRoute.params.subscribe((params) => {
       this.id = params['id'];
       this.getUserData(this.id);
@@ -115,8 +113,8 @@ export class UserDetailsComponent implements OnInit {
     this.totalPoints = this.data.reduce((total, point) => total + point.value, 0);
   }
 
-  openModal(){
-    this.dialogService.open()
+  openDialog(){
+    this.dialogService.redeem()
   }
 
   onSelect(data: any): void {

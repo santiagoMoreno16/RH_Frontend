@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DialogService } from 'src/app/services/dialog.service';
 
 @Component({
   selector: 'app-programs',
@@ -7,7 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProgramsComponent  implements OnInit {
 
-  constructor() { }
+  openModal(){
+    this.dialogService.open()
+  }
+
+    
+    constructor(private dialogService: DialogService) { }
 
   ngOnInit() {}
 

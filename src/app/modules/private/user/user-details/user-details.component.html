@@ -76,8 +76,8 @@
         <div><strong>Empresa: </strong> Cuidame.tech</div>
       </div>
       <div class="box">
-        <div><strong>Email: </strong>{{ email }}</div>
-        <div><strong>Fecha de Cumpleaños: </strong> 01-01-1990</div>
+        <div><strong>Email: </strong>{{ userModel?.access.email  }}</div>
+        <div><strong>Fecha de Cumpleaños: </strong> {{ userModel?.employee.birthdate | dateFormat }}</div>
       </div>
     </div>
   </div>
@@ -147,7 +147,7 @@
 <section>
   <div class="personal-programs">
     <div class="program-header">
-      <h1>Mis Programas Personales</h1>
+      <h1>Beneficios Personales</h1>
     </div>
     <div class="add-program-container">
       <button><i class="fa-solid fa-plus"></i> Agregar</button>
@@ -199,12 +199,12 @@
             </div>
             <div>1200 pts</div>
           </div>
-          <div class="col redeem" (click)="openModal()">CANJEAR</div>
+          <div class="col redeem" (click)="openDialog()">CANJEAR</div>
           <div class="col to-apply">
             <div style="font-size: 1.25rem; font-weight: normal">Tienes:</div>
             <div>{{ totalPoints }} pts</div>
           </div>
-          <div class="col approve">APROBAR</div>
+          <div class="col approve">PROGRAMAR</div>
         </div>
       </div>
     </div>
@@ -252,12 +252,12 @@
             </div>
             <div>1200 pts</div>
           </div>
-          <div class="col redeem" (click)="openModal()">CANJEAR</div>
+          <div class="col redeem" >CANJEAR</div>
           <div class="col to-apply">
             <div style="font-size: 1.25rem; font-weight: normal">Tienes:</div>
             <div>{{ totalPoints }} pts</div>
           </div>
-          <div class="col approve">APROBAR</div>
+          <div class="col approve">PROGRAMAR</div>
         </div>
       </div>
     </div>
@@ -295,8 +295,5 @@
   </div>
 </section>
 
-<!-- Starts Courses -->
+<!-- Ends Courses -->
 
-<!-- Starts Redeem Modal -->
-<button (click)="openModal()">Open Dialog Custom</button>
-<!-- Ends Redeem Modal -->
