@@ -3,8 +3,10 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Color, ScaleType } from '@swimlane/ngx-charts';
 import { ToastrService } from 'ngx-toastr';
 import { Subscription } from 'rxjs';
+import { PersonalProgram } from 'src/app/models/personalPrograms';
 import { User } from 'src/app/models/user';
 import { DialogService } from 'src/app/services/dialog.service';
+import { ProgramService } from 'src/app/services/program.service';
 import { UserService } from 'src/app/services/user.service';
 
 
@@ -38,6 +40,7 @@ export class UserDetailsComponent implements OnInit {
   private tmp: any;
   public email: any;
   public userModel: any = User;
+  public programModel: any = PersonalProgram;
   public id: string = '';
   public cargaFinalizada: boolean;
   public sub: Subscription;
@@ -50,7 +53,8 @@ export class UserDetailsComponent implements OnInit {
     public userService: UserService,
     public toastr: ToastrService,
     private activatedRoute: ActivatedRoute,
-    private dialogService: DialogService
+    private dialogService: DialogService,
+    private programService: ProgramService
   ) {
     this.sub = this.tmp;
     this.cargaFinalizada = false;
@@ -67,11 +71,13 @@ export class UserDetailsComponent implements OnInit {
     });
   }
 
-  getAccessData(id: string){
-    this.userService.getAccess(id).subscribe((email) => {
-      this.email = email.email;
+  getPersonalPrograms(id: string){
+    this.programService.getPersonalPrograms(id).subscribe((data: any) => {
+      this.programModel = data.program;
+      console.log("🚀 ~ UserDetailsComponent ~ this.programService.getPersonalPrograms ~ this.programModel:", this.programModel)
     });
   }
+  
 
   private getUserData(id: string): void {
     this.userService.getUser(id).subscribe(
@@ -80,7 +86,7 @@ export class UserDetailsComponent implements OnInit {
         this.getOneName();
         this.cargaFinalizada = true;
         this.getPoints(this.userModel.user.id);
-        this.getAccessData(id);
+        this.getPersonalPrograms(this.userModel.user.id)
       },
       (error) => {
         console.error("Error al obtener el usuario:", error);
@@ -113,7 +119,7 @@ export class UserDetailsComponent implements OnInit {
     this.totalPoints = this.data.reduce((total, point) => total + point.value, 0);
   }
 
-  openDialog(){
+  openDialog(id: string){
     this.dialogService.redeem()
   }
 

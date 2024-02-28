@@ -18,3 +18,8 @@ export const API_GET_USER_EMAIL = API_URL + 'api/auth';
 // Points
 
 export const API_GET_USER_POINTS = API_URL + 'api/points';
+
+
+// Programs
+
+export const API_GET_USER_PROGRAMS = API_URL + 'api/personalprogram';

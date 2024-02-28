@@ -76,8 +76,11 @@
         <div><strong>Empresa: </strong> Cuidame.tech</div>
       </div>
       <div class="box">
-        <div><strong>Email: </strong>{{ userModel?.access.email  }}</div>
-        <div><strong>Fecha de Cumpleaños: </strong> {{ userModel?.employee.birthdate | dateFormat }}</div>
+        <div><strong>Email: </strong>{{ userModel?.access.email }}</div>
+        <div>
+          <strong>Fecha de Cumpleaños: </strong>
+          {{ userModel?.employee.birthdate | dateFormat }}
+        </div>
       </div>
     </div>
   </div>
@@ -155,22 +158,20 @@
   </div>
 
   <div class="program-column">
+    @for (prog of programModel; track prog) {
     <div class="programs-container">
       <div class="section-container">
         <div class="first-section">
-          <div>Estética y Salud</div>
+          <div>{{prog.categoryId.name}}</div>
           <div class="program-img">
             <img src="assets/images/mask.svg" alt="mask" />
-            <p>LIMPIEZA FACIAL</p>
+            <p>{{prog.name}}</p> 
           </div>
         </div>
         <div class="second-section">
           <div class="paragraph">
             <p>
-              Experiencia rejuvenecedora de una limpieza facial de lujo. Este
-              beneficio brinda la oportunidad de disfrutar de un tratamiento
-              especializado diseñado para revitalizar y mejorar la apariencia de
-              la piel.
+              {{prog.description}}
             </p>
             <div class="agreement">Convenio:</div>
           </div>
@@ -197,9 +198,9 @@
             <div style="font-size: 1.25rem; font-weight: normal">
               Requisito:
             </div>
-            <div>1200 pts</div>
+            <div>{{prog.requirement}} pts</div>
           </div>
-          <div class="col redeem" (click)="openDialog()">CANJEAR</div>
+          <div class="col redeem" (click)="openDialog(prog.id)">CANJEAR</div>
           <div class="col to-apply">
             <div style="font-size: 1.25rem; font-weight: normal">Tienes:</div>
             <div>{{ totalPoints }} pts</div>
@@ -208,59 +209,9 @@
         </div>
       </div>
     </div>
-    <div class="programs-container">
-      <div class="section-container">
-        <div class="first-section">
-          <div>Estética y Salud</div>
-          <div class="program-img">
-            <img src="assets/images/mask.svg" alt="mask" />
-            <p>LIMPIEZA FACIAL</p>
-          </div>
-        </div>
-        <div class="second-section">
-          <div class="paragraph">
-            <p>
-              Experiencia rejuvenecedora de una limpieza facial de lujo. Este
-              beneficio brinda la oportunidad de disfrutar de un tratamiento
-              especializado diseñado para revitalizar y mejorar la apariencia de
-              la piel.
-            </p>
-            <div class="agreement">Convenio:</div>
-          </div>
-          <div class="agreement-img">
-            <div class="agreement-container">
-              <div class="img-c">
-                <img src="" alt="" />
-              </div>
-            </div>
-            <div class="stars-container">
-              <div class="stars">
-                <i class="fa-regular fa-star"></i
-                ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
-                ><i class="fa-solid fa-star"></i
-                ><i class="fa-solid fa-star"></i>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="thrid-section">
-        <div class="grid-container">
-          <div class="col requirement">
-            <div style="font-size: 1.25rem; font-weight: normal">
-              Requisito:
-            </div>
-            <div>1200 pts</div>
-          </div>
-          <div class="col redeem" >CANJEAR</div>
-          <div class="col to-apply">
-            <div style="font-size: 1.25rem; font-weight: normal">Tienes:</div>
-            <div>{{ totalPoints }} pts</div>
-          </div>
-          <div class="col approve">PROGRAMAR</div>
-        </div>
-      </div>
-    </div>
+    } @empty {
+    <span>Empty list of programs</span>
+    }
   </div>
 </section>
 
@@ -296,4 +247,3 @@
 </section>
 
 <!-- Ends Courses -->
-
