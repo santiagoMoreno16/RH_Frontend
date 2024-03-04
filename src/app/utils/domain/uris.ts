@@ -23,3 +23,8 @@ export const API_GET_USER_POINTS = API_URL + 'api/points';
 // Programs
 
 export const API_GET_USER_PROGRAMS = API_URL + 'api/personalprogram';
+
+
+// Modules
+
+export const API_GET_MODULES = API_URL + 'api/module'

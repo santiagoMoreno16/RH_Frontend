@@ -7,11 +7,12 @@ import { FormsModule } from '@angular/forms';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { ProgramsComponent } from './programs/programs.component';
 import { DateFormatPipe } from 'src/app/utils/methods/customDate';
+import { CustomDateFormatPipe } from 'src/app/utils/methods/customDatev2';
 
 
 
 @NgModule({
-  declarations: [UserDetailsComponent, ProgramsComponent, DateFormatPipe],
+  declarations: [UserDetailsComponent, ProgramsComponent, DateFormatPipe, CustomDateFormatPipe],
   imports: [
     CommonModule,
     UserRoutingModule,

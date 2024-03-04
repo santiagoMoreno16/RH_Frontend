@@ -73,6 +73,7 @@ ng g class models/ResponseSession  --skip-tests=true
 ng g s services/session --skip-tests=true
 ng g s services/user --skip-tests=true
 ng g s services/program --skip-tests=true
+ng g s services/modules --skip-tests=true
 
 
 # Modals

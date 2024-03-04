@@ -74,7 +74,6 @@ export class UserDetailsComponent implements OnInit {
   getPersonalPrograms(id: string){
     this.programService.getPersonalPrograms(id).subscribe((data: any) => {
       this.programModel = data.program;
-      console.log("🚀 ~ UserDetailsComponent ~ this.programService.getPersonalPrograms ~ this.programModel:", this.programModel)
     });
   }
   

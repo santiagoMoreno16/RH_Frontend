@@ -1,6 +1,6 @@
 <!-- Starts Educative Programs Content  -->
 
-<section style="margin: 200px 0 0 0;">
+<section style="margin: 200px 0 0 0">
   <div class="personal-programs">
     <div class="program-header">
       <h1>Educativo</h1>
@@ -8,28 +8,25 @@
   </div>
 
   <div class="program-column">
+    @for (item of courseModel; track $index) {
     <div class="programs-container">
       <div class="section-container">
         <div class="first-section">
-          <div>SG-SST</div>
+          <div>{{ item.name }}</div>
           <div class="program-img">
             <img src="assets/images/mask.svg" alt="mask" />
-            <p>Conceptos Básicos</p>
+            <p>{{ item.name }}</p>
           </div>
         </div>
         <div class="second-section">
           <div class="paragraph">
             <p>
-              Capacitación que tiene como objetivo el brindar los conceptos
-              necesarios que todos trabajador debe de tener para su cuidado y el
-              cuidado de los demás. Aca aprenderas:
+              {{ item.description }}
             </p>
-            <p>1. La importancia del SG-SST.</p>
-            <p>2. Que es un Incidente de Seguridad.</p>
-            <p>3. Que hacer en caso de un Accidente de Trabajo</p>
+            @for (label of item.labels; track $index) {
+            <p>{{ $index + 1 }}. {{ label }}.</p>
+            }
           </div>
-          <div class="agreement-img">
-            <div class="agreement-container"></div>
             <div class="stars-container">
               <div class="stars">
                 <i class="fa-regular fa-star"></i
@@ -37,7 +34,6 @@
                 ><i class="fa-solid fa-star"></i
                 ><i class="fa-solid fa-star"></i>
               </div>
-            </div>
           </div>
         </div>
       </div>
@@ -47,22 +43,23 @@
             <div style="font-size: 1.25rem; font-weight: normal">
               Modalidad:
             </div>
-            <div>Virtual</div>
+            <div>{{ item.modality }}</div>
           </div>
           <div class="col redeem">
             <div style="font-size: 1.25rem; font-weight: normal">
               Cierre Inscripciones:
             </div>
-            02 Feb
+            {{ item.deadline | customDateFormat }}
           </div>
           <div class="col to-apply">
             <div style="font-size: 1.25rem; font-weight: normal">Duración:</div>
-            <div>8 Horas</div>
+            <div>{{ item.duration }} Horas</div>
           </div>
-          <div class="col approve" (click)="openModal()" >INSCRIBIRSE</div>
+          <div class="col approve" (click)="openModal()">INSCRIBIRSE</div>
         </div>
       </div>
     </div>
+    }
   </div>
 </section>
 
