@@ -38,6 +38,7 @@ export class SessionService {
 
   public salir(): void {
     localStorage.removeItem('token');
+    localStorage.removeItem('user_id');
     this.router.navigate(['land/home']);
   }
 

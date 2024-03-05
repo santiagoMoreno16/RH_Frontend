@@ -86,6 +86,7 @@ export class UserDetailsComponent implements OnInit {
         this.cargaFinalizada = true;
         this.getPoints(this.userModel.user.id);
         this.getPersonalPrograms(this.userModel.user.id)
+        localStorage.setItem('user_id', this.userModel.user.id);
       },
       (error) => {
         console.error("Error al obtener el usuario:", error);

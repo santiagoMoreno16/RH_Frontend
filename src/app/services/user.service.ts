@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import * as serverUrl from '../utils/domain/uris';
-import { Observable, map } from 'rxjs';
+import { BehaviorSubject, Observable, map } from 'rxjs';
 import { User } from '../models/user';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
@@ -21,7 +21,16 @@ export class UserService {
   public apiGetUserEmail: string = serverUrl.API_GET_USER_EMAIL;
   public apiGetUserPoints: string = serverUrl.API_GET_USER_POINTS;
 
+  private userIdSubject: BehaviorSubject<string> = new BehaviorSubject<string>('');
+  id$: Observable<string> = this.userIdSubject.asObservable();
+
   constructor(private http: HttpClient) {}
+
+
+  setUserId(userId: string): void {
+    this.userIdSubject.next(userId);
+  }
+
   public getUser(id: string): Observable<User> {
     return this.http.get<User>(`${this.apiGetUser}/${id}`);
   }

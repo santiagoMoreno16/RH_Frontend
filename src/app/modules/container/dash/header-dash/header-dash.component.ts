@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SessionService } from 'src/app/services/session.service';
 
 @Component({
   selector: 'app-header-dash',
@@ -7,8 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderDashComponent  implements OnInit {
 
-  constructor() { }
+  constructor(private sessionSerivce: SessionService) { }
 
   ngOnInit() {}
+
+  signOut(){
+    this.sessionSerivce.salir()
+  }
 
 }

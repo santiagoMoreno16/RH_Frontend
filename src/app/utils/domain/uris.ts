@@ -28,3 +28,4 @@ export const API_GET_USER_PROGRAMS = API_URL + 'api/personalprogram';
 // Modules
 
 export const API_GET_MODULES = API_URL + 'api/module'
+export const API_SET_MODULES = API_URL + 'api/usercourse'
