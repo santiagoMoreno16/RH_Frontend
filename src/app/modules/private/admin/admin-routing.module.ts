@@ -1,14 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
-import { CourseComponent } from './course/course.component';
+import { AdminHomeComponent } from './admin-home/admin-home.component';
 
 const routes: Routes = [
-  { path: ':id', component: CourseComponent },
+  { path: 'home/:id', component: AdminHomeComponent },
 
-  { path: '**', redirectTo: 'course', pathMatch: 'full' },
+  { path: '**', redirectTo: 'home', pathMatch: 'full' },
 ];
-
 
 @NgModule({
   declarations: [],
@@ -17,4 +16,4 @@ const routes: Routes = [
 
   ]
 })
-export class CourseRoutingModule { }
+export class AdminRoutingModule { }

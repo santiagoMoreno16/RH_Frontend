@@ -44,6 +44,11 @@ private
 
 ng g c modules/private/user/UserDetails
 ng g c modules/private/user/programs
+ng g c modules/private/admin/home
+
+ng g m modules/private/admin
+ng g m modules/private/admin/admin-routing --flat --module=admin
+
 ng g c modules/private/course/course
 
 

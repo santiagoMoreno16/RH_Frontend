@@ -31,7 +31,7 @@
   <div class="content">
     @if (courseBook) {
     <div class="course-description">
-      <div class="course-title">Curso de Conceptos Básicos de SG-SST</div>
+      <div class="course-title">Curso de {{course.name}}</div>
       <div class="course-qualification">
         <div class="course-stars">
           <i class="fa-regular fa-star"></i><i class="fa-solid fa-star"></i
@@ -42,15 +42,13 @@
       </div>
       <div class="course-paragraph">
         <p>
-          Capacitación que tiene como objetivo el brindar los conceptos
-          necesarios que todos trabajador debe de tener para su cuidado y el
-          cuidado de los demás. <br />
+          {{course.description}} <br />
           <br />
           Acá aprenderás: <br />
         </p>
-        <p>1. La importancia del SG-SST.</p>
-        <p>2. Que es un Incidente de Seguridad.</p>
-        <p>3. Que hacer en caso de un Accidente de Trabajo</p>
+        @for (label of course.labels; track $index) {
+          <p>{{ $index + 1 }}. {{ label }}.</p>
+          }
       </div>
       <div class="start-container">
         <div class="start-course">

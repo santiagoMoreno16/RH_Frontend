@@ -1,0 +1,33 @@
+<!-- Starts User Details  -->
+
+<section>
+  <div class="user-container">
+    <div class="profile-container">
+      <div class="profile-picture">
+        <img src="assets/images/girl.svg" alt="profile" />
+      </div>
+
+      <div class="status-circle" *ngIf="cargaFinalizada && userModel?.user">
+        <p>¡Hola!</p>
+        <p class="profile-name">{{ oneName }}</p>
+      </div>
+    </div>
+    <div class="data-container" *ngIf="cargaFinalizada && userModel?.user">
+      <div>
+        <h2>{{ userModel?.user.firstName }}</h2>
+      </div>
+      <div>
+        <p>Auxiliar Administrativo</p>
+      </div>
+      <div>
+        <p>Cuidame.tech</p>
+      </div>
+      <div>
+        <img src="assets/icons/gps.svg" alt="gps" />
+        <p>Tunja, Colombia</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Ends User Details  -->

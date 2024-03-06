@@ -7,8 +7,8 @@
       ¡FELICITACIONES!
     </div>
     <div class="congrats">
-      Felicidades  por inscribirte al curso de: <strong>Conceptos básicos de SG-SST</strong>
-        Curso que se realiza de manera Virtual, seleccione tus metas:  
+      Felicidades por inscribirte al curso de: <strong>{{object.name}}</strong>
+        Curso que se realiza de manera {{object.modality}}, seleccione tus metas:  
     </div>
     <div class="item achieve">
       <div class="item-container"><div class="item-1">DIARIO</div><div class="option">30 Minutos</div></div>
@@ -19,7 +19,7 @@
       <div class="start-container">
         <div class="start-course">
           !Mira la primera clase de este curso!
-          <button>COMIENZA AHORA</button>
+          <button (click)="goToCourse(object._id)">COMIENZA AHORA</button>
         </div>
       </div>
     </div>

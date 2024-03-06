@@ -6,6 +6,7 @@ import { Subscription, catchError, map } from 'rxjs';
 import { ResponseSessionModel } from 'src/app/models/response-session.model';
 import { SessionModel } from 'src/app/models/session.model';
 import { SessionService } from 'src/app/services/session.service';
+import { Globals } from 'src/app/utils/domain/global';
 import { showMessage } from 'src/app/utils/messages/toast.func';
 import { observadorAny } from 'src/app/utils/observers/any-type';
 @Component({
@@ -70,7 +71,15 @@ export class LoginComponent implements OnInit, OnDestroy {
         map((result: ResponseSessionModel) => {
           localStorage.setItem('token', result.token);
           const id = result.user.id;
-          this.router.navigate(['/private/user/details/' + id]);
+
+          if (this.selectedOption === Globals.employee) {
+            this.router.navigate(['/private/user/details/' + id]);
+          } else if (this.selectedOption === Globals.company) {
+            this.router.navigate(['/private/admin/home/' + id]);
+          } else if (this.selectedOption === Globals.supplier){
+
+          }
+
           showMessage(
             'success',
             'Bienvenido al sistema',
@@ -81,6 +90,8 @@ export class LoginComponent implements OnInit, OnDestroy {
           return result;
         }),
         catchError((err) => {
+          console.log("🚀 ~ LoginComponent ~ catchError ~ err:", err)
+          
           showMessage(
             'error',
             'Autenticación incorrecta',

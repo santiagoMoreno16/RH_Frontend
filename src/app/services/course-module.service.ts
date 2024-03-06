@@ -12,6 +12,7 @@ export class CourseModuleService {
 
   public apiGetCourses: string = serverUrl.API_GET_MODULES;
   public apiSetCourses: string = serverUrl.API_SET_MODULES;
+  public apiGetCourseById: string = serverUrl.API_GET_MODULES;
   constructor(private http: HttpClient) { }
 
   public getCourseModules(): Observable<CourseModule> {
@@ -20,6 +21,10 @@ export class CourseModuleService {
 
   public registerCourse(obj: UserCourseEntity): Observable<UserCourseEntity> {
     return this.http.post<UserCourseEntity>(this.apiSetCourses, obj)
+  }
+
+  public getCourseById(id: string): Observable<CourseModule> {
+    return this.http.get<CourseModule>(`${this.apiGetCourseById}/${id}`)
   }
 
 }

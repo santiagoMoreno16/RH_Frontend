@@ -13,9 +13,13 @@ import { HttpClientModule } from '@angular/common/http';
 import {NgxChartsModule}  from '@swimlane/ngx-charts';
 import {MatDialogModule} from '@angular/material/dialog';
 
+import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform-browser/animations';
+
 @NgModule({
   declarations: [AppComponent],
   imports: [
+    BrowserAnimationsModule,
+    NoopAnimationsModule,
     BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,

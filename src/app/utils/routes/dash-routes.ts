@@ -26,6 +26,13 @@ export const RUTAS_DASHBOARD: Routes = [
       loadChildren: () =>
         import('../../modules/private/course/course.module').then((m) => m.CourseModule),
     },
+
+     // Admin Routes
+     {
+      path: 'admin',
+      loadChildren: () =>
+        import('../../modules/private/admin/admin.module').then((m) => m.AdminModule),
+    },
   
     { path: '', redirectTo: 'dash', pathMatch: 'full' },
     { path: '**', component: InternalErrorComponent },

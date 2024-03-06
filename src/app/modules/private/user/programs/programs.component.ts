@@ -31,7 +31,7 @@ export class ProgramsComponent implements OnInit {
       this.userId = id;
     });
   }
-  openModal(id: string) {
+  openModal(id: string, obj: any) {
     const user_id = localStorage.getItem('user_id');
     if (user_id) {
       const course = new UserCourseEntity(user_id, {course_id: id, completed: false});
@@ -39,13 +39,14 @@ export class ProgramsComponent implements OnInit {
         .registerCourse(course)
         .pipe(
           map((res) => {
-            this.dialogService.open();
+            this.dialogService.open(obj);
           }),
           catchError((err) => {
+            
             showMessage(
-              'error',
-              'No puedes registrar este curso',
-              'Error',
+              'info',
+              err.error.error,
+              'Información',
               this.toastr
             );
             throw err;

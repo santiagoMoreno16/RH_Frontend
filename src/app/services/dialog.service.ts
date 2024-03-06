@@ -9,12 +9,13 @@ import { RedeemComponent } from '../components/redeem/redeem.component';
 export class DialogService {
   constructor(private matDialog: MatDialog) {}
 
-  open() {
-    this.matDialog.open(DialogComponent);
+  open(object: any) {
+    this.matDialog.open(DialogComponent, {
+      data: { object },
+    });
   }
 
-  redeem(){
+  redeem() {
     this.matDialog.open(RedeemComponent);
   }
-
 }
