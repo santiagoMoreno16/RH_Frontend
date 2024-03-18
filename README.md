@@ -3,7 +3,7 @@
   <a href="https://github.com/ShaanCoding/ReadME-Generator">
   </a>
 
-  <h3 align="center">ReadME Generator</h3>
+  <h3 align="center">Readme</h3>
 
   <p align="center">
     Cuídame || Reward Hours Project
