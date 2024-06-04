@@ -60,19 +60,19 @@
     } @if (whoTeach) {
     <div class="teacher-container">
       <div>
-        <img src="assets/images/young_man.svg" alt="Teacher" />
+        <!--<img src="assets/images/young_man.svg" alt="Teacher" /> -->
+        <img [src]="course.img" alt="Teacher" /> 
       </div>
       <div class="teacher-description">
         <div class="teacher-title">
-          Conoce quién enseña el Curso de Conceptos Básicos de SG-SST
+          Conoce quién enseña el Curso de {{course.name}}
         </div>
-        <div class="teacher-name">Camilo López</div>
+        <div class="teacher-name">{{ course.created_by[0].teacher_id.firstName }} {{ course.created_by[0].teacher_id.lastName }}</div>
         <div class="teacher-desc">
-          Es ingeniero Industrial de la universidad de san pepito, con master en
-          Sg-SST, con mas de 10 años de experiencia.
+          {{ course.created_by[0].description }}
         </div>
         <div class="teacher-footer">
-          Design for the future, design for everyone
+          {{ course.created_by[0].slogan }}
         </div>
       </div>
     </div>

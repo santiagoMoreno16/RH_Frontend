@@ -9,7 +9,14 @@ export class CourseModule {
     public modality: string,
     public duration: number,
     public deadline: Date,
-    public created_by: string,
+    public created_by: Created_by,
     public img: string
   ) {}
+}
+
+interface Created_by {
+  teacher_id: string;
+  description: string;
+  slogan: string;
+  img: string
 }
